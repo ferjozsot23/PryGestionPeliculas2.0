@@ -14,9 +14,19 @@ import java.util.Map;
 import java.util.Set;
 
 public class Crud {
+    /*public void insertarDatos(String enlace, HashMap<String, String> datos){
+        Set keys = datos.keySet();
+        String postData = "";
+        for(Object key: keys){
+            postData += key + "=" + datos.get(key) + "&";
+        }
+        postData = postData.substring(0, postData.length()-1);
+
+        envioDatos(enlace, postData);
+    }*/
+
     public void insertarDatos(String enlace, HashMap<String, String> datos){
         try {
-            URL url = new URL(enlace);
 
             Set keys = datos.keySet();
             String postData = "";
@@ -25,6 +35,7 @@ public class Crud {
             }
             postData = postData.substring(0, postData.length()-1);
 
+            URL url = new URL(enlace);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
             conn.setDoOutput(true);
@@ -79,6 +90,4 @@ public class Crud {
             is.close();
         }
     }
-
-
 }
