@@ -3,7 +3,7 @@ package gestorPelicula;
 import java.util.ArrayList;
 
 public class Pelicula {
-    private String titulo, director, archivo;
+    private String titulo, director;
     private float calificacion;
     private int duracion;
     private ArrayList<String> genero, elenco, idioma;
@@ -12,10 +12,9 @@ public class Pelicula {
 
     }
 
-    public Pelicula(String titulo, String director, String archivo) {
+    public Pelicula(String titulo, String director) {
         this.titulo = titulo;
         this.director = director;
-        this.archivo = archivo;
     }
 
     public ArrayList<String> getInformacion() {
@@ -44,11 +43,4 @@ public class Pelicula {
         this.director = director;
     }
 
-    public String getArchivo() {
-        return archivo;
-    }
-
-    public void setArchivo(String archivo) {
-        this.archivo = archivo;
-    }
 }
