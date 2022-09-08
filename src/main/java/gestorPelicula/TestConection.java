@@ -20,6 +20,7 @@ public class TestConection {
 
         JSONObject json2 = (JSONObject) json.getJSONArray("data").get(0);
         System.out.println(json2.get("id_pelicula"));
+
     }
 
     private static String readAll(Reader rd) throws IOException {
