@@ -14,16 +14,18 @@ import java.util.Map;
 import java.util.Set;
 
 public class EnvioRecepcion {
-    /*public void insertarDatos(String enlace, HashMap<String, String> datos){
-        Set keys = datos.keySet();
-        String postData = "";
-        for(Object key: keys){
-            postData += key + "=" + datos.get(key) + "&";
-        }
-        postData = postData.substring(0, postData.length()-1);
+    private static EnvioRecepcion envioRecepcion;
 
-        envioDatos(enlace, postData);
-    }*/
+    private EnvioRecepcion() {
+
+    }
+
+    public static EnvioRecepcion obtenerInstancia(){
+        if( envioRecepcion == null){
+            envioRecepcion = new EnvioRecepcion();
+        }
+        return envioRecepcion;
+    }
 
     public void insertarDatos(String enlace, HashMap<String, String> datos){
         try {
