@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="PruebaMEIVEN" />
+        <module name="PryGestionPeliculas2.0" />
       </profile>
     </annotationProcessing>
   </component>
