@@ -3,10 +3,10 @@ package gestorPelicula;
 import java.util.ArrayList;
 
 public class GestorPelicula {
-    Pelicula pelicula = null;
+    private Pelicula pelicula = null;
 
-    public GestorPelicula(Pelicula pelicula){
-        this.pelicula = pelicula;
+    public GestorPelicula(ArrayList<String> infoPelicula){
+        this.pelicula = new Pelicula(infoPelicula.get(0),infoPelicula.get(1),infoPelicula.get(2));
     }
 
     public String buscarPelicula(String titulo){
