@@ -6,7 +6,7 @@ public class GestorPelicula {
     private Pelicula pelicula;
 
     public GestorPelicula(ArrayList<String> infoPelicula){
-        this.pelicula = new Pelicula(infoPelicula.get(0),infoPelicula.get(1),infoPelicula.get(2));
+        //this.pelicula = new Pelicula(infoPelicula.get(0),infoPelicula.get(1),infoPelicula.get(2));
     }
 
     public String buscarPelicula(String titulo){
