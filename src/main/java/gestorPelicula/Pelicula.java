@@ -58,4 +58,16 @@ public class Pelicula {
     public void setDuracion(int duracion) {
         this.duracion = duracion;
     }
+
+    public ArrayList<String> getGenero() {
+        return genero;
+    }
+
+    public ArrayList<String> getElenco() {
+        return elenco;
+    }
+
+    public ArrayList<String> getIdioma() {
+        return idioma;
+    }
 }
