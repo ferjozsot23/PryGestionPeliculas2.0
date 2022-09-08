@@ -11,7 +11,7 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Map;
 
-import crud.Crud;
+import crud.EnvioRecepcion;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -23,7 +23,7 @@ public class TestConection {
         //JSONObject json2 = (JSONObject) json.getJSONArray("data").get(0);
         //System.out.println(json2.get("id_pelicula"));
 
-        Crud cr = new Crud();
+        EnvioRecepcion cr = new EnvioRecepcion();
         ArrayList<Map> datos = cr.getDatos("http://unisatelite.com/Movies/getPelicula.php");
         Map mapa = datos.get(0);
         System.out.println(mapa.get("id_pelicula"));

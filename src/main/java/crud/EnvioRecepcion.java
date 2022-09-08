@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class Crud {
+public class EnvioRecepcion {
     /*public void insertarDatos(String enlace, HashMap<String, String> datos){
         Set keys = datos.keySet();
         String postData = "";

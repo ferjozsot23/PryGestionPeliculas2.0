@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Adapter {
-    private Crud crud = new Crud();
+    private EnvioRecepcion crud = new EnvioRecepcion();
 
     public HashMap getPeliculas(){
         ArrayList arrayPeliculas = null;
