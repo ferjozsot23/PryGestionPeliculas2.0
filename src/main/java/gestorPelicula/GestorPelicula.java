@@ -1,12 +1,15 @@
 package gestorPelicula;
 
+import crud.Adapter;
+
 import java.util.ArrayList;
 
 public class GestorPelicula {
     private Pelicula pelicula;
+    private Adapter adaptador = new Adapter();
 
-    public GestorPelicula(ArrayList<String> infoPelicula){
-        //this.pelicula = new Pelicula(infoPelicula.get(0),infoPelicula.get(1),infoPelicula.get(2));
+    public GestorPelicula(){
+        pelicula = null;
     }
 
     public String buscarPelicula(String titulo){
@@ -21,7 +24,9 @@ public class GestorPelicula {
 
     }
 
-    public void agregarPelicula(){
+    public void agregarPelicula(String titulo, String director, float calificacion, int duracion, double tarifa, ArrayList<String> genero, ArrayList<String> elenco, ArrayList<String> idioma){
+        this.pelicula = new Pelicula(titulo, director, calificacion, duracion, tarifa, genero, elenco, idioma);
+        adaptador.insertPelicula(this.pelicula);
 
     }
 
