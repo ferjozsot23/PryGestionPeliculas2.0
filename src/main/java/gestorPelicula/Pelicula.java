@@ -3,13 +3,12 @@ package gestorPelicula;
 import java.util.ArrayList;
 
 public class Pelicula {
-    private String titulo, director, idPelicula;
+    private String titulo, director, idPelicula,genero, elenco, idioma;
     private float calificacion;
     private int duracion;
     private double tarifa;
-    private ArrayList<String> genero, elenco, idioma;
 
-    public Pelicula(String titulo, String director, float calificacion, int duracion, double tarifa, ArrayList<String> genero, ArrayList<String> elenco, ArrayList<String> idioma) {
+    public Pelicula(String titulo, String director, float calificacion, int duracion, double tarifa, String genero, String elenco, String idioma) {
         this.titulo = titulo;
         this.director = director;
         this.idPelicula = null;
@@ -21,14 +20,41 @@ public class Pelicula {
         this.idioma = idioma;
     }
 
-    public ArrayList<String> getInformacion() {
-        return genero;
+    public Pelicula(ArrayList<String> datosPelicula){
+        this.idPelicula = datosPelicula.get(0);
+        this.titulo = datosPelicula.get(1);
+        this.director = datosPelicula.get(2);
+        this.calificacion = Float.parseFloat(datosPelicula.get(3));
+        this.duracion = Integer.parseInt(datosPelicula.get(4));
+        this.genero = datosPelicula.get(5);
+        this.elenco = datosPelicula.get(6);
+        this.idioma = datosPelicula.get(7);
+        this.tarifa = Double.parseDouble(datosPelicula.get(8));
     }
 
-    public void setInformacion(String genero, String elenco, String idioma) {
-        this.genero.add(genero);
-        this.elenco.add(elenco);
-        this.idioma.add(idioma);
+    public ArrayList<String> getInformacion() {
+        ArrayList<String> informacion = new ArrayList<>();
+        informacion.add(this.idPelicula);
+        informacion.add(this.titulo);
+        informacion.add(this.director);
+        informacion.add(Float.toString(this.calificacion));
+        informacion.add(Integer.toString(this.duracion));
+        informacion.add(this.genero);
+        informacion.add(this.elenco);
+        informacion.add(this.idioma);
+        informacion.add(Double.toString(this.tarifa));
+        return informacion;
+    }
+
+    public void setInformacion(String titulo, String director, float calificacion, int duracion, double tarifa,String genero, String elenco, String idioma) {
+        this.titulo = titulo;
+        this. director = director;
+        this.calificacion = calificacion;
+        this.duracion = duracion;
+        this.tarifa = tarifa;
+        this.genero = genero;
+        this.elenco = elenco;
+        this.idioma = idioma;
     }
 
     public String getIdPelicula() {
@@ -71,15 +97,15 @@ public class Pelicula {
         this.duracion = duracion;
     }
 
-    public ArrayList<String> getGenero() {
+    public String getGenero() {
         return genero;
     }
 
-    public ArrayList<String> getElenco() {
+    public String getElenco() {
         return elenco;
     }
 
-    public ArrayList<String> getIdioma() {
+    public String getIdioma() {
         return idioma;
     }
 

@@ -9,11 +9,11 @@ public class GestorPelicula {
     private Adapter adaptador = new Adapter();
 
     public GestorPelicula(){
-        pelicula = null;
+        this.pelicula = null;
     }
-
-    public String buscarPelicula(String titulo){
-        return "";
+    //Obtener pelicula ya existente en base de datos
+    public void setPelicula(String idPelicula){
+        pelicula = new Pelicula(adaptador.getPelicula(idPelicula));
     }
 
     public ArrayList<String> extraerDatosPelicula(){
@@ -21,16 +21,17 @@ public class GestorPelicula {
     }
 
     public void eliminarPelicula(String idPelicula){
-
+        adaptador.eliminarPelicula(idPelicula);
     }
-
-    public void agregarPelicula(String titulo, String director, float calificacion, int duracion, double tarifa, ArrayList<String> genero, ArrayList<String> elenco, ArrayList<String> idioma){
+    //Crear pelicula y enviar a la base da datos
+    public void agregarPelicula(String titulo, String director, float calificacion, int duracion, double tarifa,String genero, String elenco, String idioma){
         this.pelicula = new Pelicula(titulo, director, calificacion, duracion, tarifa, genero, elenco, idioma);
         adaptador.insertPelicula(this.pelicula);
-
+        this.pelicula.setIdPelicula(adaptador.getPeliculaPorTitulo(titulo).get(0));
     }
 
-    public void actualizarPelicula(String genero, String elenco, String idioma){
-        pelicula.setInformacion(genero,elenco,idioma);
+    public void actualizarPelicula(String titulo, String director, float calificacion, int duracion, double tarifa,String genero, String elenco, String idioma){
+        pelicula.setInformacion(titulo, director, calificacion, duracion, tarifa, genero, elenco, idioma);
+        adaptador.actualizarPelicula(this.pelicula);
     }
 }
