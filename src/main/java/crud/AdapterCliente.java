@@ -61,11 +61,11 @@ public class AdapterCliente {
 
     public void insertarCliente(Cliente cliente){
         HashMap<String,String> datosCliente = new HashMap<>();
+        datosCliente.put("id_cliente",cliente.getIdentificacion());
         datosCliente.put("nombre",cliente.getNombre());
         datosCliente.put("apellido", cliente.getApellido());
         datosCliente.put("direccion",cliente.getDireccion());
         datosCliente.put("telefono",cliente.getTelefono());
-        datosCliente.put("id_cliente",cliente.getIdentificacion());
         crud.insertarDatos("http://unisatelite.com/Movies/insertarCliente.php",datosCliente);
         this.clientes = getClientes();
         //System.out.println(this.clientes.toString());
