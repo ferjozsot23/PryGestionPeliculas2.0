@@ -40,12 +40,9 @@ public  class Recibo {
     public void generarDetalles(Cliente cliente, float efectivo){//efectivo: dinero fisico entregado por el comprador
         detalles="              ALQUILER               \n";
         detalles+="Fecha: Quito, "+fecha+"\n";
-        /*
-        for(String dato: cliente.getDatosCliente()){
-            detalles+=dato+"\n";
-        }
 
-         */
+        detalles+=cliente.toString();
+
         detalles+="_____________\n";
         detalles+="Producto                       Precio\n";
 
@@ -76,12 +73,9 @@ public  class Recibo {
     public void generarDetallesMulta(Cliente cliente, float efectivo){//efectivo: dinero fisico entregado por el comprador
         detalles="                MULTA                \n";
         detalles+="Fecha: Quito, "+fecha+"\n";
-        /*
-        for(String dato: cliente.getDatosCliente()){
-            detalles+=dato+"\n";
-        }
 
-         */
+        detalles+=cliente.toString();
+
         detalles+="_____________\n";
         detalles+="Descripcion                    Costo \n";
         detalles+="Multa                         \n"+this.multa;
