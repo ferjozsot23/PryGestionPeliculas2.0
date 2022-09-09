@@ -1,6 +1,7 @@
 package gestorPago;
 
 import gestorCliente.Cliente;
+import gestorPelicula.Copia;
 
 import java.time.LocalDateTime;
 
@@ -15,10 +16,10 @@ public  class Recibo {
     String detalles;
     float multa;
     //cambiar por lista de copias
-    List<String> contenido;
+    List<Copia> contenido;
 
     //aqui se reciben un listado de copias; cambiar String por copia
-    public Recibo(List<String> contenido) {
+    public Recibo(List<Copia> contenido) {
 //        //Consultar a la base de datos el ultimo numero de factura registrado/
 //        this.numeroFactura=1;
 //
@@ -138,7 +139,7 @@ public  class Recibo {
 
     public float getMulta() { return multa; }
 
-    public List<String> getContenido() { return contenido; }
+    public List<Copia> getContenido() { return contenido; }
 
     public void setId_recibo(int id_recibo) { this.id_recibo = id_recibo; }
 
@@ -150,5 +151,5 @@ public  class Recibo {
 
     public void setMulta(float multa) { this.multa = multa; }
 
-    public void setContenido(List<String> contenido) { this.contenido = contenido; }
+    public void setContenido(List<Copia> contenido) { this.contenido = contenido; }
 }
