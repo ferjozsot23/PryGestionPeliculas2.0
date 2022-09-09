@@ -35,13 +35,6 @@ public class GUIGestorFactura extends JDialog {
         GUARDARButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                gestorRenta.emitirRecibo(Integer.parseInt(tfDiasRenta.getText()));
-
-                try {
-                    tfDiasRenta.setText(Integer.toString(gestorRenta.obtenerDias(Integer.parseInt(tfNumeroRenta.getText()),tfFecha.getText())));
-                } catch (ParseException e) {
-                    throw new RuntimeException(e);
-                }
 
 
                 tfTotalCancelar.setText(Float.toString(gestorRenta.getMonto()));
@@ -51,6 +44,13 @@ public class GUIGestorFactura extends JDialog {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 
+
+                try {
+                    tfDiasRenta.setText(Integer.toString(gestorRenta.obtenerDias(Integer.parseInt(tfNumeroRenta.getText()),tfFecha.getText())));
+                    gestorRenta.emitirRecibo(Integer.parseInt(tfDiasRenta.getText()));
+                } catch (ParseException e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
     }
