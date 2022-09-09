@@ -26,8 +26,7 @@ public  class Recibo {
     public Recibo(Copia contenido) {
 //        //Consultar a la base de datos el ultimo numero de factura registrado/
 //        this.numeroFactura=1;
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(fecha);
+        fecha = new java.util.Date();
 //        this.contenido=contenido;
 //
         this.monto=calcularSubTotal();
@@ -35,8 +34,7 @@ public  class Recibo {
     public Recibo(int dias, int peliculas){
         //        //Consultar a la base de datos el ultimo numero de factura registrado/
 //        this.numeroFactura=1;
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(fecha);;
+        fecha = new java.util.Date();
         this.multa= (float) (Math.round((dias*peliculas*0.75)*100.0)/100.0);
     }
     //debe recibir un cliente
