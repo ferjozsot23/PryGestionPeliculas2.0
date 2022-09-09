@@ -19,7 +19,6 @@ public class GestorRenta {
 
     public void agregarRenta(){
         adaptadorRenta.insertarRenta(renta);
-
     }
 
     public void crearRenta(Date fechaInicio, String id_Cliente, int id_Copia){
