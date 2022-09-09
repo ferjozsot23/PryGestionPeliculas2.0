@@ -28,7 +28,6 @@ public class GUIGestorPelicula extends JDialog {
     GestorPelicula gestorPelicula = new GestorPelicula();
     HashMap<String, ArrayList<String>> peliculas = gestorPelicula.getPeliculas();
     ArrayList<ArrayList> peliculasCMB = new ArrayList<>();
-    boolean flag = false;
 
     public GUIGestorPelicula() {
         setContentPane(contentPane);
@@ -38,7 +37,7 @@ public class GUIGestorPelicula extends JDialog {
         System.out.println(peliculas.toString());
         actualizarComboBox();
         //this.pack();
-        this.setVisible(true);
+        //this.setVisible(true);
         dispose();
         //System.exit(0);
 
@@ -94,7 +93,8 @@ public class GUIGestorPelicula extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 GUIGestorCopia guiCopia = new GUIGestorCopia();
-                guiCopia.pack();
+                //guiCopia.pack();
+
                 guiCopia.setVisible(true);
             }
         });
@@ -148,18 +148,13 @@ public class GUIGestorPelicula extends JDialog {
     }
         public void actualizarComboBox () {
             peliculas = gestorPelicula.getPeliculas();
-
             cmbPeliculas.removeAllItems();
-            flag = false;
             peliculasCMB = new ArrayList<>();
             peliculas.forEach((key, value) -> {
                 peliculasCMB.add(value);
                 //cmbPeliculas.addItem(new ComboItem("hooa","aaaa"));
                 cmbPeliculas.addItem(value.get(6));
             });
-            flag = true;
-
-            //cmbPeliculas.addItem();
         }
         /*
         public static void main (String[]args){

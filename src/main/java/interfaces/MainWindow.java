@@ -19,6 +19,7 @@ public class MainWindow extends JDialog {
         AÑADIRPELÍCULAButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 GUIGestorPelicula pelicula = new GUIGestorPelicula();
+                pelicula.setVisible(true);
             }
         });
         REALIZARRENTAButton.addActionListener(new ActionListener() {

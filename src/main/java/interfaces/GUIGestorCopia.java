@@ -3,6 +3,7 @@ package interfaces;
 import gestorPelicula.GestorPelicula;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -21,10 +22,12 @@ public class GUIGestorCopia extends JDialog {
     public GUIGestorCopia() {
         setContentPane(contentPane);
         setModal(true);
-        this.setVisible(true);
-        dispose();
+        setMinimumSize(new Dimension(900,540));
+        //this.setVisible(true);
         cargarPeliculas();
         cargarCopias();
+        dispose();
+
 
 
         AGREGARButton.addActionListener(new ActionListener() {
