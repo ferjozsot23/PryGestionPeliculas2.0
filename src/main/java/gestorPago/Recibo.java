@@ -137,4 +137,18 @@ public  class Recibo {
     public float getMonto() { return monto; }
 
     public float getMulta() { return multa; }
+
+    public List<String> getContenido() { return contenido; }
+
+    public void setId_recibo(int id_recibo) { this.id_recibo = id_recibo; }
+
+    public void setFecha(LocalDateTime fecha) { this.fecha = fecha; }
+
+    public void setMonto(float monto) { this.monto = monto; }
+
+    public void setDetalles(String detalles) { this.detalles = detalles; }
+
+    public void setMulta(float multa) { this.multa = multa; }
+
+    public void setContenido(List<String> contenido) { this.contenido = contenido; }
 }
