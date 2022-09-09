@@ -85,7 +85,7 @@ public class AdapterCliente {
         datosCliente.put("apellido", cliente.getApellido());
         datosCliente.put("direccion",cliente.getDireccion());
         datosCliente.put("telefono",cliente.getTelefono());
-        crud.insertarDatos("http://unisatelite.com/Movies/insertarCliente.php",datosCliente);
+        crud.insertarDatos("http://unisatelite.com/Movies/actualizarCliente.php",datosCliente);
         this.clientes = getClientes();
     }
 }
