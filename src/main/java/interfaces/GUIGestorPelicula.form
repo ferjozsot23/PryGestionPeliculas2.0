@@ -84,7 +84,7 @@
                         </constraints>
                         <properties>
                           <background color="-11393146"/>
-                          <enabled value="false"/>
+                          <enabled value="true"/>
                           <font name="Droid Sans Mono" size="16" style="1"/>
                           <foreground color="-1"/>
                           <text value="MODIFICAR COPIAS"/>
