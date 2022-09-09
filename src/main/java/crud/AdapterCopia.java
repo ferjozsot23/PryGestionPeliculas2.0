@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class AdapterCopia {
     private EnvioRecepcion crud = EnvioRecepcion.obtenerInstancia();
-    private HashMap<String, ArrayList<String>> copia;
+    private HashMap<String, ArrayList<String>> copias;
 
     public HashMap getCopias(){
         ArrayList arrayCopias = null;
@@ -32,18 +32,18 @@ public class AdapterCopia {
 
     public ArrayList getCopia(String idCopia){
         //HashMap mapPeliculas = getPeliculas()
-        if(this.copia == null){
-            this.copia = getCopias();
+        if(this.copias == null){
+            this.copias = getCopias();
         }
-        return (ArrayList) this.copia.get(idCopia);
+        return (ArrayList) this.copias.get(idCopia);
     }
 
     public void insertCopia(Copia copia){
         HashMap<String,String> datosCopia = new HashMap<>();
         datosCopia.put("disponible",copia.getDisponible());
         crud.insertarDatos("http://unisatelite.com/Movies/insertarCopia.php", datosCopia);
-        this.copia = getCopia();
-        System.out.println(this.copia.toString());
+        this.copias = getCopia();
+        System.out.println(this.copias.toString());
     }
 
     public void eliminarCopia(String idCopia){
@@ -58,6 +58,6 @@ public class AdapterCopia {
         datosCopia.put("id_copia",copia.getIdCopia());
         datosCopia.put("disponible",copia.getDisponible());
         crud.insertarDatos("http://unisatelite.com/Movies/actualizarCopia.php",datosCopia);
-        this.copia = getCopia();
+        this.copias = getCopia();
     }
 }
