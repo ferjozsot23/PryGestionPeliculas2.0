@@ -43,6 +43,7 @@ public class GUIGestorFactura extends JDialog {
                     throw new RuntimeException(e);
                 }
 
+
                 tfTotalCancelar.setText(Float.toString(gestorRenta.getMonto()));
             }
         });
