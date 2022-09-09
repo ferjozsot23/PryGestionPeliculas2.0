@@ -11,7 +11,7 @@ public class GUIGestorRenta extends JDialog {
     private JPanel contentPane;
     private JButton BUSCARButton;
     private JButton AÑADIRButton;
-    private JTextField textField1;
+    private JTextField tfNumeroRenta;
     private JComboBox cbIdCopia;
     private JTextField tfIdCliente;
     private JTextField textField3;
@@ -44,7 +44,8 @@ public class GUIGestorRenta extends JDialog {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 //el id de recibo debe ser el mismo que el id de la renta
-                gestorRenta.crearRenta(tfIdCliente.getText(),cbIdCopia.getSelectedIndex(),1);
+                gestorRenta.crearRenta(tfIdCliente.getText(),cbIdCopia.getSelectedIndex(),Integer.parseInt(tfNumeroRenta.getText()));
+
             }
         });
     }

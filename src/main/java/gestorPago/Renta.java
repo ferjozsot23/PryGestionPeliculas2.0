@@ -87,15 +87,7 @@ public class Renta {
         calendar.add(Calendar.DAY_OF_YEAR, dias);
         return calendar.getTime();
     }
-/*
-    public Recibo getRecibo() {
-        return recibo;
-    }
 
-    public void asociarRecibo(Recibo r) {
-        this.recibo = r;
-    }
-*/
     public int getId_Copia() {
         return id_Copia;
     }
@@ -111,20 +103,6 @@ public class Renta {
     public void setId_Cliente(String id_Cliente) {
         this.id_Cliente = id_Cliente;
     }
-/*
-    public Copia getCp() {
-        return cp;
-    }
-
-    public void agregarCopia(Copia cp) {
-        this.cp = cp;
-    }
-*/
-    // función para agregar la factura por la renta de las películas
-
-
-
-
 
 }
 

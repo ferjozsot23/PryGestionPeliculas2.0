@@ -29,11 +29,11 @@ public class GUIGestorCopia extends JDialog {
         AGREGARButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-
+                System.out.println(cBPelicula.getSelectedItem());
                 HashMap<String, ArrayList<String>> peliculas = gestorPelicula.getPeliculas();
                 peliculas.forEach((key,value)->{
                     cBPelicula.addItem(value.get(6));
-                    if(value.get(6) == (String) cBPelicula.getSelectedItem()){
+                    if(value.get(6).equals((String) cBPelicula.getSelectedItem())){
                         gestorPelicula.insertarCopias(Integer.parseInt(tFCantidadCopias.getText()), key);
                     }
                 });
@@ -46,7 +46,7 @@ public class GUIGestorCopia extends JDialog {
                 String idCopia = (String) cBCopia.getSelectedItem();
                 String[] parts = idCopia.split("-");
                 idCopia = Arrays.asList(parts).get(0);
-                idCopia = idCopia.substring(Integer.parseInt(idCopia));
+
                 gestorPelicula.eliminarCopia(idCopia);
                 cargarCopias();
             }
@@ -65,7 +65,7 @@ public class GUIGestorCopia extends JDialog {
         HashMap<String, ArrayList<String>> copias = gestorPelicula.getCopias();
         cBCopia.removeAllItems();
         copias.forEach((key,value)->{
-            cBPelicula.addItem(value.get(0) + "-" +  gestorPelicula.getPelicula(value.get(2)));
+            cBCopia.addItem(key + "-" +  gestorPelicula.getPelicula(value.get(0)).get(6));
         });
     }
 

@@ -63,6 +63,9 @@ public class GestorRenta {
         recibo = new Recibo(dias);  //datos del cliente
         adapterRecibo.emitirRecibo(new Recibo(dias));
     }
+    public float getMonto(){
+        return recibo.getMonto();
+    }
 
 
 
