@@ -46,7 +46,7 @@ public class AdapterRenta {
         datosRenta.put("fecha_inicio",date.format(renta.getFecha_Inicio()));
         datosRenta.put("fecha_entrega", date.format(renta.getFecha_entrega()));
         datosRenta.put("dias_extendidos",Float.toString(renta.getDias_extendidos()));
-        datosRenta.put("id_recibo", Integer.toString(renta.getRecibo().getId_recibo()));
+        datosRenta.put("id_recibo", Integer.toString(renta.getId_Recibo()));
         datosRenta.put("id_cliente",String.valueOf(renta.getId_Cliente()));
         datosRenta.put("id_copia", String.valueOf(renta.getId_Copia()));
         crud.insertarDatos("http://unisatelite.com/Movies/insertarRenta.php",datosRenta);
@@ -67,7 +67,7 @@ public class AdapterRenta {
         datosRenta.put("fecha_inicio",date.format(renta.getFecha_Inicio()));
         datosRenta.put("fecha_entrega", date.format(renta.getFecha_entrega()));
         datosRenta.put("dias_extendidos",Float.toString(renta.getDias_extendidos()));
-        datosRenta.put("id_recibo", Integer.toString(renta.getId_recibo()));
+        datosRenta.put("id_recibo", Integer.toString(renta.getId_Recibo()));
         datosRenta.put("id_cliente",String.valueOf(renta.getId_Cliente()));
         datosRenta.put("id_copia", String.valueOf(renta.getId_Copia()));
         crud.insertarDatos("http://unisatelite.com/Movies/actualizarRenta.php",datosRenta);

@@ -9,21 +9,22 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class GestorRenta {
-    private ArrayList<Renta> rentas;
+
     private Renta renta;
-    private ArrayList<Recibo> recibos;
-    private ArrayList<Recibo> multas;
+    private Recibo recibo;
+    private Recibo multa;
     SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
     private AdapterRenta adaptadorRenta = new AdapterRenta();
 
     //Creación de renta y guardado en la base de datos
-    public void agregarRenta(){
-        this.rentas.add(new Renta(id, new java.util.Date()));
+    /*public void agregarRenta(){
+        this.rentas.add(new Renta(new java.util.Date()));
         adaptadorRenta.insertarRenta(new Renta(id, new java.util.Date()));
-    }
+    }*/
 
     public void agregarRenta(Date fechaInicio, int id_Cliente, int id_Copia){
-        adaptadorRenta.insertarRenta(new Renta(new java.util.Date(), id_Cliente,id_Copia));
+        adaptadorRenta.insertarRenta(new Renta(fechaInicio, id_Cliente,id_Copia));
+        renta = new Renta(fechaInicio, id_Cliente,id_Copia);
     }
 
     public void obtenerInformacionRenta(int idRenta){

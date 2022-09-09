@@ -13,7 +13,8 @@ import java.text.SimpleDateFormat;
 public class Renta {
     private int id_renta;
     private int id_Copia;
-    private int id_Cliente;
+    private int id_Recibo;
+    private String id_Cliente;
     private Date fecha_inicio;
     private Date fecha_entrega;
     private final int diasMaximos = 7;
@@ -28,12 +29,20 @@ public class Renta {
         this.id_Copia = id_Copia;
     }
 
-    public Renta(, int id_Copia, int id_Cliente, Date fecha_inicio, Date fecha_entrega, int dias_extendidos) {
+    public Renta(int id_Copia, String id_Cliente, Date fecha_inicio, Date fecha_entrega, int dias_extendidos) {
         this.id_Copia = id_Copia;
         this.id_Cliente = id_Cliente;
         this.fecha_inicio = fecha_inicio;
         this.fecha_entrega = fecha_entrega;
         this.dias_extendidos = dias_extendidos;
+    }
+
+    public int getId_Recibo() {
+        return id_Recibo;
+    }
+
+    public void setId_Recibo(int id_Recibo) {
+        this.id_Recibo = id_Recibo;
     }
 
     public int getId_renta() {
@@ -91,11 +100,11 @@ public class Renta {
         this.id_Copia = id_Copia;
     }
 
-    public int getId_Cliente() {
+    public String getId_Cliente() {
         return id_Cliente;
     }
 
-    public void setId_Cliente(int id_Cliente) {
+    public void setId_Cliente(String id_Cliente) {
         this.id_Cliente = id_Cliente;
     }
 /*
