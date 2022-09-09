@@ -1,7 +1,5 @@
 package crud;
 
-import gestorPelicula.Pelicula;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;

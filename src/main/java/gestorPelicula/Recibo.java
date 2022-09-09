@@ -2,14 +2,14 @@ package gestorPelicula;
 
 import java.util.ArrayList;
 
-public class Pelicula {
+public class Recibo {
     private String titulo, director, idPelicula,genero, elenco, idioma;
     private float calificacion;
     private int duracion;
     private double tarifa;
 
-    public Pelicula(){}
-    public Pelicula(String titulo, String director, float calificacion, int duracion, double tarifa, String genero, String elenco, String idioma) {
+    public Recibo(){}
+    public Recibo(String titulo, String director, float calificacion, int duracion, double tarifa, String genero, String elenco, String idioma) {
         this.titulo = titulo;
         this.director = director;
         this.idPelicula = null;
@@ -21,7 +21,7 @@ public class Pelicula {
         this.idioma = idioma;
     }
 
-    public Pelicula(ArrayList<String> datosPelicula){
+    public Recibo(ArrayList<String> datosPelicula){
         this.idPelicula = datosPelicula.get(0);
         this.titulo = datosPelicula.get(6);
         this.director = datosPelicula.get(3);
