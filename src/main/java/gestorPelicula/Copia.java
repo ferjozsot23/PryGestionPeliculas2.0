@@ -6,7 +6,7 @@ public class Copia {
 
     private String idCopia;
     private boolean disponible;
-    private Recibo pelicula;
+    private Pelicula pelicula;
 
     public Copia(ArrayList<String> infoCopia){
         this.idCopia = infoCopia.get(0);
@@ -28,11 +28,11 @@ public class Copia {
         this.disponible = disponible;
     }
 
-    public Recibo getPelicula() {
+    public Pelicula getPelicula() {
         return pelicula;
     }
 
-    public void setPelicula(Recibo pelicula) {
+    public void setPelicula(Pelicula pelicula) {
         this.pelicula = pelicula;
     }
 }
