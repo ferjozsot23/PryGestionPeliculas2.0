@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Adapter {
-    private EnvioRecepcion crud = new EnvioRecepcion();
+    private EnvioRecepcion crud = EnvioRecepcion.obtenerInstancia();
     private HashMap<String,ArrayList<String>> peliculas;
 
     public HashMap getPeliculas(){
