@@ -32,11 +32,12 @@ public class EnvioRecepcion {
 
             Set keys = datos.keySet();
             String postData = "";
+            System.out.println(keys.toString());
             for(Object key: keys){
                 postData += key + "=" + datos.get(key) + "&";
             }
             postData = postData.substring(0, postData.length()-1);
-
+            System.out.println(postData);
             URL url = new URL(enlace);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");

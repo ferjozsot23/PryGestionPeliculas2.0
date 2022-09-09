@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class Adapter {
     private EnvioRecepcion crud = EnvioRecepcion.obtenerInstancia();
@@ -57,6 +58,8 @@ public class Adapter {
         datosPelicula.put("tarifa",Double.toString(pelicula.getTarifa()));
         crud.insertarDatos("http://unisatelite.com/Movies/insertarPelicula.php",datosPelicula);
         this.peliculas = getPeliculas();
+        Set keys = datosPelicula.keySet();
+        System.out.println(keys.toString());
     }
 
     public void eliminarPelicula(String idPelicula){
