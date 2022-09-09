@@ -42,7 +42,7 @@ public class AdapterCopia {
         HashMap<String,String> datosCopia = new HashMap<>();
         datosCopia.put("disponible", Boolean.toString(copia.isDisponible()));
         crud.insertarDatos("http://unisatelite.com/Movies/insertarCopia.php", datosCopia);
-        this.copias = getCopia();
+        this.copias = getCopias();
         System.out.println(this.copias.toString());
     }
 
@@ -56,9 +56,9 @@ public class AdapterCopia {
     public void actualizarCopia(Copia copia){
         HashMap<String,String> datosCopia = new HashMap<>();
         datosCopia.put("id_copia",copia.getIdCopia());
-        datosCopia.put("disponible",copia.getDisponible());
+        datosCopia.put("disponible",Boolean.toString(copia.isDisponible()));
         crud.insertarDatos("http://unisatelite.com/Movies/actualizarCopia.php",datosCopia);
-        this.copias = getCopia();
+        this.copias = getCopias();
     }
 
     public void insertarCopias(int numeroCopias, String idPelicula){
@@ -68,11 +68,6 @@ public class AdapterCopia {
             datosCopia.put("id_pelicula",idPelicula);
             crud.insertarDatos("http://unisatelite.com/Movies/insertarCopia.php",datosCopia);
         }
-    }
-
-    public void eliminarCopia(String idCopia){
-        HashMap<String,String> datosCopia = new HashMap<>();
-        datosCopia.put("id_copia",idCopia);
-        crud.insertarDatos("http://unisatelite.com/Movies/borrarCopia.php",datosCopia);
+        this.copias = getCopias();
     }
 }
