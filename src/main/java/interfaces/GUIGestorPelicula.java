@@ -1,12 +1,16 @@
 package interfaces;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class GUIGestorPelicula {
-    private JButton INGRESEButton;
-    private JButton INGRESEButton1;
+public class GUIGestorPelicula extends JDialog {
+    private JPanel contentPane;
+    private JButton buscarButton;
+    private JButton ELIMINARButton;
+    private JButton ACTUALIZARButton;
+    private JButton GUARDARButton;
     private JTextField textField1;
     private JTextField textField2;
     private JTextField textField3;
@@ -15,23 +19,47 @@ public class GUIGestorPelicula {
     private JTextField textField6;
     private JTextField textField7;
     private JTextField textField8;
-    private JButton ACTUALIZARButton;
-    private JButton GUARDARButton;
-    private JButton AÑADIRPELÍCULAButton;
-    private JButton BUSCARButton;
+    private JButton MODIFICARCOPIASButton;
 
     public GUIGestorPelicula() {
+        setContentPane(contentPane);
+        setMinimumSize(new Dimension(900,540));
+        setModal(true);
+        this.pack();
+        this.setVisible(true);
+        System.exit(0);
+        ELIMINARButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+            }
+        });
         ACTUALIZARButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent actionEvent) {
 
             }
         });
         GUARDARButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent actionEvent) {
+
+            }
+        });
+        buscarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+            }
+        });
+        MODIFICARCOPIASButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
 
             }
         });
     }
 }
+
+
+
