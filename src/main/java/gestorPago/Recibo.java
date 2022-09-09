@@ -28,22 +28,19 @@ public  class Recibo {
         //this.id_recibo=id_recibo;
         fecha = new java.util.Date();
         this.monto=calcularSubTotal();
+        generarDetalles();
     }
-    /*
-    public Recibo(int id_recibo, int dias){
-        this.id_recibo=id_recibo;
-        fecha = new java.util.Date();
-        this.multa= (float) (Math.round((dias*0.75)*100.0)/100.0);
-    }
-*/
-    public void generarDetalles(Cliente cliente, float efectivo){//efectivo: dinero fisico entregado por el comprador
+
+    public void generarDetalles(){//efectivo: dinero fisico entregado por el comprador
         detalles="";
         detalles+="ALQUILER\tFecha: Quito, "+fecha+"\tDescripcion: Alquiler\t"+"Total USD: "+calcularTotal();
     }
-    public void generarDetallesMulta(Cliente cliente, float efectivo){//efectivo: dinero fisico entregado por el comprador
+    /*
+    public void generarDetallesMulta(){//efectivo: dinero fisico entregado por el comprador
         detalles="";
         detalles+="Multa\tFecha: Quito, "+fecha+"\tDescripcion: Multa\t"+"Total USD: "+calcularTotal();
     }
+    */
     public float calcularTotal() {
         float total=monto+calcularImpuestos();
         total=(float) (Math.round(total*100.0)/100.0);
