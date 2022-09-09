@@ -66,6 +66,9 @@ public class GestorRenta {
     public float getMonto(){
         return recibo.getMonto();
     }
+    public String getFecha(){
+        return date.format(new java.util.Date());
+    }
 
 
 
@@ -78,7 +81,11 @@ public class GestorRenta {
     }
 
 
-
+    public int obtenerDias(int idRenta, String fechaEntrega) throws ParseException {
+        obtenerInformacionRenta(idRenta);
+        Date fechainicio = date.parse(rentainfo.get(1));
+        return date.parse(fechaEntrega).getDay() - fechainicio.getDay();
+    }
 
     public void establecerDiasExtendidos(Date fechaEntrega, Date fechaInicio){
         renta.setDias_extendidos(fechaEntrega.getDay() - fechaInicio.getDay());

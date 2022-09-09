@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 
 public class GUIGestorFactura extends JDialog {
     private JPanel contentPane;
@@ -29,10 +30,18 @@ public class GUIGestorFactura extends JDialog {
         this.setVisible(true);
         System.exit(0);
         GestorRenta gestorRenta = new GestorRenta();
+        tfFecha.setText(gestorRenta.getFecha());
+
         GUARDARButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 gestorRenta.emitirRecibo(Integer.parseInt(tfDiasRenta.getText()));
+
+                try {
+                    tfDiasRenta.setText(Integer.toString(gestorRenta.obtenerDias(Integer.parseInt(tfNumeroRenta.getText()),tfFecha.getText())));
+                } catch (ParseException e) {
+                    throw new RuntimeException(e);
+                }
 
                 tfTotalCancelar.setText(Float.toString(gestorRenta.getMonto()));
             }
