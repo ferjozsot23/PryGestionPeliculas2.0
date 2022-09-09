@@ -1,6 +1,6 @@
 package crud;
 
-import gestorPelicula.Recibo;
+import gestorPago.Recibo;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -41,7 +41,7 @@ public class AdapterRecibo {
     public void insertRecibo(Recibo recibo){
         HashMap<String,String> datosRecibo = new HashMap<>();
         datosRecibo.put("fecha", recibo.getFecha());
-        datosRecibo.put("monto", Float.toString(recibo.getMonto());
+        datosRecibo.put("monto", Float.toString(recibo.getMonto()));
         datosRecibo.put("detalles", recibo.getDetalles());
         datosRecibo.put("multa", Float.toString(recibo.getMulta()));
         crud.insertarDatos("http://unisatelite.com/Movies/insertarRecibo.php", datosRecibo);
@@ -58,9 +58,9 @@ public class AdapterRecibo {
 
     public void actualizarRecibo(Recibo recibo){
         HashMap<String,String> datosRecibo = new HashMap<>();
-        datosRecibo.put("id_recibo",recibo.getIdRecibo());
+        datosRecibo.put("id_recibo",Integer.toString(recibo.getId_recibo()));
         datosRecibo.put("fecha", recibo.getFecha());
-        datosRecibo.put("monto", Float.toString(recibo.getMonto());
+        datosRecibo.put("monto", Float.toString(recibo.getMonto()));
         datosRecibo.put("detalles", recibo.getDetalles());
         datosRecibo.put("multa", Float.toString(recibo.getMulta()));
         crud.insertarDatos("http://unisatelite.com/Movies/actualizarRecibo.php",datosRecibo);
