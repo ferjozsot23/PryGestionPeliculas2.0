@@ -1,7 +1,8 @@
 package crud;
 
 import gestorPelicula.Copia;
-import gestorPelicula.Recibo;
+import gestorPelicula.Pelicula;
+
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -59,7 +60,7 @@ public class AdapterPelicula {
         return resultadoBusqueda;
     }
 
-    public void insertPelicula(Recibo pelicula){
+    public void insertPelicula(Pelicula pelicula){
         HashMap<String,String> datosPelicula = new HashMap<>();
         datosPelicula.put("titulo",pelicula.getTitulo());
         datosPelicula.put("director", pelicula.getDirector());
@@ -81,7 +82,7 @@ public class AdapterPelicula {
         this.peliculas = getPeliculas();
     }
 
-    public void actualizarPelicula(Recibo pelicula){
+    public void actualizarPelicula(Pelicula pelicula){
         HashMap<String,String> datosPelicula = new HashMap<>();
         datosPelicula.put("id_pelicula",pelicula.getIdPelicula());
         datosPelicula.put("titulo",pelicula.getTitulo());
