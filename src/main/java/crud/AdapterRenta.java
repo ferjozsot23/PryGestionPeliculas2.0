@@ -56,7 +56,7 @@ public class AdapterRenta {
 
     public void eliminarRenta(String idRenta){
         HashMap<String,String> datosRenta = new HashMap<>();
-        datosRenta.put("id_renta",);
+        datosRenta.put("id_renta", idRenta);
         crud.insertarDatos("http://unisatelite.com/Movies/borrarRenta.php",datosRenta);
         this.rentas = getRentas();
     }

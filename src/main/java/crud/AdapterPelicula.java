@@ -1,5 +1,6 @@
 package crud;
 
+import gestorPelicula.Copia;
 import gestorPelicula.Recibo;
 
 import java.io.IOException;
@@ -93,5 +94,21 @@ public class AdapterPelicula {
         datosPelicula.put("tarifa",Double.toString(pelicula.getTarifa()));
         crud.insertarDatos("http://unisatelite.com/Movies/actualizarPelicula.php",datosPelicula);
         this.peliculas = getPeliculas();
+    }
+
+
+    public void insertarCopias(Copia copia){
+        HashMap<String,String> datosCopia = new HashMap<>();
+        datosCopia.put("disponible",copia.isDisponible());
+        datosCopia.put("director", copia.getDirector());
+        datosCopia.put("calificacion",Float.toString(copia.getCalificacion()));
+        datosCopia.put("duracion", Integer.toString(copia.getDuracion()));
+        datosCopia.put("genero",copia.getGenero());
+        datosCopia.put("elenco", copia.getElenco());
+        datosCopia.put("idioma",copia.getIdioma());
+        datosCopia.put("tarifa",Double.toString(copia.getTarifa()));
+        crud.insertarDatos("http://unisatelite.com/Movies/insertarPelicula.php",datosCopia);
+        this.peliculas = getPeliculas();
+        System.out.println(this.peliculas.toString());
     }
 }
