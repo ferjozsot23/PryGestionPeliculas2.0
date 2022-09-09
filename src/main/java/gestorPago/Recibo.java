@@ -37,20 +37,12 @@ public  class Recibo {
     }
 */
     public void generarDetalles(Cliente cliente, float efectivo){//efectivo: dinero fisico entregado por el comprador
-        detalles="              ALQUILER               \n";
-        detalles+="Fecha: Quito, "+fecha+"\n";
-        detalles+=cliente.toString();
-        detalles+="Producto     Precio\n";
-        detalles+="Alquiler      "+this.monto+"\n";
-        detalles+="Total USD: "+calcularTotal()+"\n";
+        detalles="";
+        detalles+="ALQUILER\tFecha: Quito, "+fecha+"\tDescripcion: Alquiler\t"+"Total USD: "+calcularTotal();
     }
     public void generarDetallesMulta(Cliente cliente, float efectivo){//efectivo: dinero fisico entregado por el comprador
-        detalles="MULTA\n";
-        detalles+="Fecha: Quito, "+fecha+"\n";
-        detalles+=cliente.toString();
-        detalles+="Descripcion  Costo \n";
-        detalles+="Multa      "+this.multa+"\n";
-        detalles+="Total USD: "+calcularTotal()+"\n";
+        detalles="";
+        detalles+="Multa\tFecha: Quito, "+fecha+"\tDescripcion: Multa\t"+"Total USD: "+calcularTotal();
     }
     public float calcularTotal() {
         float total=monto+calcularImpuestos();
