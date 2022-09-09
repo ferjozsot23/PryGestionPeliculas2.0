@@ -3,25 +3,27 @@ package gestorCliente;
 import java.util.ArrayList;
 
 public class Cliente {
-
+    private String identificacion;
     private String nombre;
     private String apellido;
-    private String telefono;
     private String direccion;
-    private String identificacion;
+    private String telefono;
+
+
 
     public Cliente(ArrayList <String> datosCliente) {
-        this.nombre = datosCliente.get(0);
-        this.apellido =datosCliente.get(1);
-        this.telefono = datosCliente.get(2);
+        this.identificacion = datosCliente.get(0);
+        this.nombre = datosCliente.get(1);
+        this.apellido =datosCliente.get(2);
         this.direccion = datosCliente.get(3);
-        this.identificacion = datosCliente.get(4);
+        this.telefono = datosCliente.get(4);
+
     }
 
     public Cliente() {
     }
 
-    public Cliente(String nombre, String apellido, String telefono, String direccion, String identificacion) {
+    public Cliente( String identificacion, String nombre, String apellido,String direccion, String telefono) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
@@ -71,13 +73,21 @@ public class Cliente {
     
     public ArrayList<String> getInformacion() {
         ArrayList<String> informacion = new ArrayList<>();
+        informacion.add(this.identificacion);
         informacion.add(this.nombre);
         informacion.add(this.apellido);
         informacion.add(this.direccion);
         informacion.add(this.telefono);
         return informacion;
         }
-       
+    public void setInformacion(String identificacion, String nombre, String apellido, String direccion, String telefono ) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.telefono = telefono;
+        this.direccion = direccion;
+        this.identificacion = identificacion;
+    }
+
     @Override
     public String toString() {
         return "Nombre: " + nombre+
