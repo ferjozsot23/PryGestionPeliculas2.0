@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class AdapterCopia {
     private EnvioRecepcion crud = EnvioRecepcion.obtenerInstancia();
-    private HashMap<String, ArrayList<String>> copia;
+    private HashMap<String, ArrayList<String>> copias;
 
     public HashMap getCopias(){
         ArrayList arrayCopias = null;
