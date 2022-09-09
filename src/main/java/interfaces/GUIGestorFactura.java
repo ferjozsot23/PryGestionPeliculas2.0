@@ -33,6 +33,7 @@ public class GUIGestorFactura extends JDialog {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 gestorRenta.emitirRecibo(Integer.parseInt(tfDiasRenta.getText()));
+
                 tfTotalCancelar.setText(Float.toString(gestorRenta.getMonto()));
             }
         });
