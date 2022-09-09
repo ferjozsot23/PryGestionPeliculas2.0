@@ -19,16 +19,15 @@ public  class Recibo {
     String detalles;
     float multa;
     //cambiar por lista de copias
+    //actualziar a id de renta
     Copia contenido;
     SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
 
     //aqui se reciben un listado de copias; cambiar String por copia
-    public Recibo(Copia contenido) {
-//        //Consultar a la base de datos el ultimo numero de factura registrado/
-//        this.numeroFactura=1;
+    public Recibo(int id_recibo) {
+        this.id_recibo=id_recibo;
         fecha = new java.util.Date();
-//       this.contenido=contenido;
-//
+
         this.monto=calcularSubTotal();
     }
     public Recibo(int dias, int peliculas){
@@ -37,8 +36,6 @@ public  class Recibo {
         fecha = new java.util.Date();
         this.multa= (float) (Math.round((dias*peliculas*0.75)*100.0)/100.0);
     }
-    //debe recibir un cliente
-    //generarDetalle(Cliente cliente)
 
     public void generarDetalles(Cliente cliente, float efectivo){//efectivo: dinero fisico entregado por el comprador
         detalles="              ALQUILER               \n";
@@ -48,24 +45,6 @@ public  class Recibo {
 
         detalles+="_____________\n";
         detalles+="Producto                       Precio\n";
-
-//        for(Copia pelicula: contenido){
-//            //del titulo de la pelicula se observan solo 20 caracteres
-//            if(pelicula.titulo.length()>=30){
-//                detalles += pelicula.titulo.substring(0,29)+"   "+pelicula.precio+"\n";
-//            }else{
-//                detalles += pelicula.titulo+"                 "+pelicula.precio+"\n";
-//            }
-        /*
-        for(String pelicula: contenido){
-           //del titulo de la pelicula se observan solo 20 caracteres
-           if(pelicula.titulo.length()>=30){
-                detalles += pelicula.titulo.substring(0,29)+"   "+1.5+"\n";
-            }else{
-                detalles += pelicula.titulo+"                 "+1.5+"\n";
-            }
-        }
-        */
         detalles+="_____________\n";
         detalles+="Sub Total: "+monto+"\n";
         detalles+="12% IVA: "+calcularImpuestos()+"\n";
@@ -117,6 +96,7 @@ public  class Recibo {
         vuelto=(float) (Math.round(vuelto*100.0)/100.0);
         return vuelto;
     }
+    /*
     public ArrayList<String> getInformacion() {
         ArrayList<String> informacion = new ArrayList<>();
         informacion.add(Integer.toString(this.id_recibo));
@@ -126,7 +106,7 @@ public  class Recibo {
         informacion.add(Float.toString(this.multa));
         return informacion;
     }
-
+*/
     public String getDetalles(){ return this.detalles; }
 
     public int getId_recibo() { return id_recibo; }
