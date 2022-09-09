@@ -40,7 +40,7 @@ public class AdapterCopia {
 
     public void insertCopia(Copia copia){
         HashMap<String,String> datosCopia = new HashMap<>();
-        datosCopia.put("disponible",copia.getDisponible());
+        datosCopia.put("disponible", Boolean.toString(copia.isDisponible()));
         crud.insertarDatos("http://unisatelite.com/Movies/insertarCopia.php", datosCopia);
         this.copias = getCopia();
         System.out.println(this.copias.toString());
