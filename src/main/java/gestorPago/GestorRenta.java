@@ -1,10 +1,9 @@
 package gestorPago;
 
+import crud.AdapterRecibo;
 import crud.AdapterRenta;
 
 import java.text.SimpleDateFormat;
-import java.time.temporal.ChronoUnit;
-import java.time.temporal.Temporal;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -16,6 +15,7 @@ public class GestorRenta {
     private int dias;
     SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
     private AdapterRenta adaptadorRenta = new AdapterRenta();
+    private AdapterRecibo adapterRecibo = new AdapterRecibo();
 
     public void agregarRenta(){
         adaptadorRenta.insertarRenta(renta);
@@ -38,12 +38,13 @@ public class GestorRenta {
         ArrayList<String> rentas = adaptadorRenta.getRenta(String.valueOf(idRenta));
 
     }
-/*
+
     public void emitirRecibo(){
-        this.recibo = new Recibo(adaptadorRenta);  //datos del cliente
+        recibo = new Recibo();  //datos del cliente
+        adapterRecibo.insertRecibo(new Recibo());
 
     }
-*/
+
 
     public void establecerDiasExtendidos(Date fechaEntrega, Date fechaInicio){
         renta.setDias_extendidos(fechaEntrega.getDay() - fechaInicio.getDay());
