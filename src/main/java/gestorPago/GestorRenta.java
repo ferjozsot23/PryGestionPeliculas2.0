@@ -70,7 +70,9 @@ public class GestorRenta {
         return date.format(new java.util.Date());
     }
 
-
+    public void setDetalle(String detalle){
+        recibo.setDetalles(detalle);
+    }
 
     public HashMap<String,ArrayList> obtenerRecibos(){
         return adapterRecibo.getRecibos();

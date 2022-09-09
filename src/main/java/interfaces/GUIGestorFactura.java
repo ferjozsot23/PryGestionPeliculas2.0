@@ -18,7 +18,7 @@ public class GUIGestorFactura extends JDialog {
     private JTextField tfApellidoCliente;
     private JTextField tfIdCliente;
     private JTextField tfFecha;
-    private JTextField textField7;
+    private JTextField tfDetalle;
     private JTextField tfDiasRenta;
     private JTextField tfTotalCancelar;
 
@@ -35,9 +35,20 @@ public class GUIGestorFactura extends JDialog {
         GUARDARButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-
-
-                tfTotalCancelar.setText(Float.toString(gestorRenta.getMonto()));
+                gestorRenta.emitirRecibo(Integer.parseInt(tfDiasRenta.getText()));
+                gestorRenta.setDetalle(tfDetalle.getText());
+            }
+        });
+        //accion para calcular valores DiaRenta
+        tfFecha.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                try {
+                    tfDiasRenta.setText(Integer.toString(gestorRenta.obtenerDias(Integer.parseInt(tfNumeroRenta.getText()),tfFecha.getText())));
+                    tfTotalCancelar.setText(Float.toString(gestorRenta.getMonto()));
+                } catch (ParseException e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
         BUSCARButton.addActionListener(new ActionListener() {
@@ -45,12 +56,7 @@ public class GUIGestorFactura extends JDialog {
             public void actionPerformed(ActionEvent actionEvent) {
 
 
-                try {
-                    tfDiasRenta.setText(Integer.toString(gestorRenta.obtenerDias(Integer.parseInt(tfNumeroRenta.getText()),tfFecha.getText())));
-                    gestorRenta.emitirRecibo(Integer.parseInt(tfDiasRenta.getText()));
-                } catch (ParseException e) {
-                    throw new RuntimeException(e);
-                }
+
             }
         });
     }
