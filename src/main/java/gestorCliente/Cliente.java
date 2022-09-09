@@ -68,7 +68,7 @@ public class Cliente {
     public void setIdentificacion(String identificacion) {
         this.identificacion = identificacion;
     }
-
+    
     public ArrayList<String> getInformacion() {
         ArrayList<String> informacion = new ArrayList<>();
         informacion.add(this.nombre);
@@ -76,5 +76,15 @@ public class Cliente {
         informacion.add(this.direccion);
         informacion.add(this.telefono);
         return informacion;
+        }
+       
+    @Override
+    public String toString() {
+        return "Nombre: " + nombre+
+                "\nApellido='" + apellido+
+                "\nTelefono='" + telefono+
+                "\nDireccion='" + direccion +
+                "\nIdentificacion='" + identificacion+"\n";
     }
+    
 }

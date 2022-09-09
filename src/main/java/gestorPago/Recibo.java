@@ -1,6 +1,7 @@
 package gestorPago;
 
 import gestorCliente.Cliente;
+import gestorPelicula.Copia;
 
 import java.time.LocalDateTime;
 
@@ -15,10 +16,10 @@ public  class Recibo {
     String detalles;
     float multa;
     //cambiar por lista de copias
-    List<String> contenido;
+    Copia contenido;
 
     //aqui se reciben un listado de copias; cambiar String por copia
-    public Recibo(List<String> contenido) {
+    public Recibo(Copia contenido) {
 //        //Consultar a la base de datos el ultimo numero de factura registrado/
 //        this.numeroFactura=1;
 //
@@ -39,12 +40,9 @@ public  class Recibo {
     public void generarDetalles(Cliente cliente, float efectivo){//efectivo: dinero fisico entregado por el comprador
         detalles="              ALQUILER               \n";
         detalles+="Fecha: Quito, "+fecha+"\n";
-        /*
-        for(String dato: cliente.getDatosCliente()){
-            detalles+=dato+"\n";
-        }
 
-         */
+        detalles+=cliente.toString();
+
         detalles+="_____________\n";
         detalles+="Producto                       Precio\n";
 
@@ -75,12 +73,9 @@ public  class Recibo {
     public void generarDetallesMulta(Cliente cliente, float efectivo){//efectivo: dinero fisico entregado por el comprador
         detalles="                MULTA                \n";
         detalles+="Fecha: Quito, "+fecha+"\n";
-        /*
-        for(String dato: cliente.getDatosCliente()){
-            detalles+=dato+"\n";
-        }
 
-         */
+        detalles+=cliente.toString();
+
         detalles+="_____________\n";
         detalles+="Descripcion                    Costo \n";
         detalles+="Multa                         \n"+this.multa;
@@ -99,7 +94,8 @@ public  class Recibo {
 
     public float calcularSubTotal() {
         //alquilar una pelicula cuesta 1.5$, sin impuestos
-        float subTotal= (float) (this.contenido.size()*1.5);
+        //float subTotal= (float) (this.contenido.size()*1.5);
+        float subTotal= 1.5F;
         subTotal=(float) (Math.round(subTotal*100.0)/100.0);
         return subTotal;
     }
@@ -138,7 +134,7 @@ public  class Recibo {
 
     public float getMulta() { return multa; }
 
-    public List<String> getContenido() { return contenido; }
+    public Copia getContenido() { return contenido; }
 
     public void setId_recibo(int id_recibo) { this.id_recibo = id_recibo; }
 
@@ -150,5 +146,5 @@ public  class Recibo {
 
     public void setMulta(float multa) { this.multa = multa; }
 
-    public void setContenido(List<String> contenido) { this.contenido = contenido; }
+    public void setContenido(Copia contenido) { this.contenido = contenido; }
 }
