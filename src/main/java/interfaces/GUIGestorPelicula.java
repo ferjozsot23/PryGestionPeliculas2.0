@@ -161,12 +161,13 @@ public class GUIGestorPelicula extends JDialog {
 
             //cmbPeliculas.addItem();
         }
+        /*
         public static void main (String[]args){
             GUIGestorPelicula dialog = new GUIGestorPelicula();
             dialog.pack();
             dialog.setVisible(true);
             System.exit(0);
-        }
+        }*/
 
 
 }
