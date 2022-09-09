@@ -14,20 +14,20 @@ public class Renta {
 
     private boolean vigencia;
 
-    private Date fecha_Inicio;
-    private Date fecha_Fin;
+    private Date fecha_inicio;
+    private Date fecha_entrega;
     private long diasExcedidos;
     private final int diasMaximos = 7;
     private int dias_extendidos;
 
-    SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
+    SimpleDateFormat date = new SimpleDateFormat("yyyy/MM/dd");
 
     public ArrayList<Copia> copiasRentadas;
     //constructor
     public Renta(){
-        this.fecha_Inicio = new java.util.Date(); //fecha del inicio de la renta
+        this.fecha_inicio = new java.util.Date(); //fecha del inicio de la renta
         this.vigencia = true;
-        this.fecha_Fin = calcularFechaMaxima(this.fecha_Inicio,diasMaximos);
+        this.fecha_entrega = calcularFechaMaxima(this.fecha_inicio,diasMaximos);
 
         this.copiasRentadas = new ArrayList<>();
 
@@ -42,19 +42,19 @@ public class Renta {
     }
 
     public Date getFecha_Inicio() {
-        return fecha_Inicio;
+        return fecha_inicio;
     }
 
     public void setFecha_Inicio(Date fecha_Inicio) {
-        this.fecha_Inicio = fecha_Inicio;
+        this.fecha_inicio = fecha_Inicio;
     }
 
-    public Date getFecha_Fin() {
-        return fecha_Fin;
+    public Date getFecha_entrega() {
+        return fecha_entrega;
     }
 
-    public void setFecha_Fin(Date fecha_Fin) {
-        this.fecha_Fin = fecha_Fin;
+    public void setFecha_entrega(Date fecha_Fin) {
+        this.fecha_entrega = fecha_Fin;
     }
 
     public int getDias_extendidos() {
