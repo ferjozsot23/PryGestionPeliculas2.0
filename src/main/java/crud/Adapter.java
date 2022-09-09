@@ -95,5 +95,4 @@ public class Adapter {
         crud.insertarDatos("http://unisatelite.com/Movies/actualizarPelicula.php",datosPelicula);
         this.peliculas = getPeliculas();
     }
-
 }

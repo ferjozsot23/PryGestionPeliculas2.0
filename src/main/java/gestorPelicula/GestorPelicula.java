@@ -3,6 +3,7 @@ package gestorPelicula;
 import crud.Adapter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class GestorPelicula {
     private Pelicula pelicula = new Pelicula();
@@ -33,5 +34,9 @@ public class GestorPelicula {
     public void actualizarPelicula(String titulo, String director, float calificacion, int duracion, double tarifa,String genero, String elenco, String idioma){
         pelicula.setInformacion(titulo, director, calificacion, duracion, tarifa, genero, elenco, idioma);
         adaptador.actualizarPelicula(this.pelicula);
+    }
+
+    public HashMap<String,ArrayList<String>> getPeliculas(){
+        return adaptador.getPeliculas();
     }
 }
