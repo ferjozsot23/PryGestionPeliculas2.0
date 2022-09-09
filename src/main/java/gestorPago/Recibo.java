@@ -30,11 +30,11 @@ public  class Recibo {
 
         this.monto=calcularSubTotal();
     }
-    public Recibo(int dias, int peliculas){
+    public Recibo(int dias){
         //        //Consultar a la base de datos el ultimo numero de factura registrado/
 //        this.numeroFactura=1;
         fecha = new java.util.Date();
-        this.multa= (float) (Math.round((dias*peliculas*0.75)*100.0)/100.0);
+        this.multa= (float) (Math.round((dias*0.75)*100.0)/100.0);
     }
 
     public void generarDetalles(Cliente cliente, float efectivo){//efectivo: dinero fisico entregado por el comprador
