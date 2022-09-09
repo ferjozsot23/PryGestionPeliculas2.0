@@ -3,6 +3,7 @@ package gestorPago;
 import crud.AdapterRecibo;
 import crud.AdapterRenta;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -14,12 +15,18 @@ public class GestorRenta {
     private Recibo recibo;
     private Recibo multa;
     private int dias;
+    private ArrayList<String> rentainfo = new ArrayList<>();
     SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
     private AdapterRenta adaptadorRenta = new AdapterRenta();
     private AdapterRecibo adapterRecibo = new AdapterRecibo();
 
     public void agregarRenta(){
         adaptadorRenta.insertarRenta(renta);
+    }
+
+    public void actualizarFechaFinalizacion(ArrayList<String> informacionRenta) throws ParseException {
+        renta = new Renta(informacionRenta);
+        adaptadorRenta.actualizarRenta(renta);
     }
 
     public void crearRenta(String id_Cliente, int id_Copia, int id_recibo){
@@ -33,7 +40,7 @@ public class GestorRenta {
     }
 
     public void obtenerInformacionRenta(int idRenta){
-        ArrayList<String> rentaInfo = adaptadorRenta.getRenta(String.valueOf(idRenta));
+        this.rentainfo = adaptadorRenta.getRenta(String.valueOf(idRenta));
     }
 
     public void finalizarRenta(int idRenta, Date fechaEntrega){
@@ -45,6 +52,8 @@ public class GestorRenta {
         recibo = new Recibo();  //datos del cliente
         adapterRecibo.emitirRecibo(new Recibo());
     }
+
+
 
     public HashMap<String,ArrayList> obtenerRecibos(){
         return adapterRecibo.getRecibos();

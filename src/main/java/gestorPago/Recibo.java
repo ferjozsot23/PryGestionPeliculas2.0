@@ -31,6 +31,7 @@ public  class Recibo {
         generarDetalles();
     }
 
+
     public void generarDetalles(){//efectivo: dinero fisico entregado por el comprador
         detalles="";
         detalles+="ALQUILER\tFecha: Quito, "+fecha+"\tDescripcion: Alquiler\t"+"Total USD: "+calcularTotal();

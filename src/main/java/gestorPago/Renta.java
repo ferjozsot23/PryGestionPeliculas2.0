@@ -3,6 +3,7 @@ package gestorPago;
 import gestorCliente.Cliente;
 import gestorPelicula.Copia;
 
+import java.text.ParseException;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.Temporal;
 import java.util.ArrayList;
@@ -30,12 +31,14 @@ public class Renta {
         this.id_Recibo = id_Recibo;
     }
 
-    public Renta(int id_Copia, String id_Cliente, Date fecha_inicio, Date fecha_entrega, int dias_extendidos) {
-        this.id_Copia = id_Copia;
-        this.id_Cliente = id_Cliente;
-        this.fecha_inicio = fecha_inicio;
-        this.fecha_entrega = fecha_entrega;
-        this.dias_extendidos = dias_extendidos;
+    public Renta(ArrayList <String> rentaInformacion) throws ParseException {
+        this.id_Copia = Integer.parseInt(rentaInformacion.get(4));
+        this.id_Cliente = rentaInformacion.get(2);
+        this.id_Recibo = Integer.parseInt(rentaInformacion.get(5));
+        this.fecha_inicio = date.parse(rentaInformacion.get(1));
+        this.fecha_entrega = date.parse(rentaInformacion.get(3));
+        this.dias_extendidos = Integer.parseInt(rentaInformacion.get(0));
+        this.id_renta = Integer.parseInt(rentaInformacion.get(6));
     }
 
     public int getId_Recibo() {
