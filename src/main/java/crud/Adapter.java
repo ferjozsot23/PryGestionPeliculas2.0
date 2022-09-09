@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class Adapter {
     private EnvioRecepcion crud = EnvioRecepcion.obtenerInstancia();
@@ -27,23 +28,35 @@ public class Adapter {
             });
             mapPeliculas.put(((HashMap<String,String>)pelicula).get("id_pelicula"),datosPelicula);
         }
-        this.peliculas = (HashMap) mapPeliculas;
+        //this.peliculas = (HashMap) mapPeliculas;
         return (HashMap) mapPeliculas;
     }
 
     public ArrayList getPelicula(String idPelicula){
-        //HashMap mapPeliculas = getPeliculas();
+        //HashMap mapPeliculas = getPeliculas()
+        if(this.peliculas == null){
+            this.peliculas = getPeliculas();
+        }
         return (ArrayList) this.peliculas.get(idPelicula);
     }
 
     public ArrayList<String> getPeliculaPorTitulo(String titulo){
-        final ArrayList<String>[] resultadoBusqueda = new ArrayList[]{new ArrayList<>()};
-        this.peliculas.forEach((key,value)->{
-            if(value.get(1).equals(titulo)) {
-                resultadoBusqueda[0] = this.peliculas.get(key);
+        ArrayList<String> resultadoBusqueda = new ArrayList<>();
+        Set keys = this.peliculas.keySet();
+        //System.out.println(keys.toString());
+        for(Object key: keys){
+            //System.out.println(key);
+            if(this.peliculas.get(key).get(6).equals(titulo)) {
+                //System.out.println("alo");
+                resultadoBusqueda = this.peliculas.get(key);
             }
-        });
-        return resultadoBusqueda[0];
+        }
+        /*this.peliculas.forEach((key,value)->{
+            if(value.get(1).equals(titulo)) {
+                resultadoBusqueda.set(this.peliculas.get(key));
+            }
+        });*/
+        return resultadoBusqueda;
     }
 
     public void insertPelicula(Pelicula pelicula){
@@ -58,8 +71,7 @@ public class Adapter {
         datosPelicula.put("tarifa",Double.toString(pelicula.getTarifa()));
         crud.insertarDatos("http://unisatelite.com/Movies/insertarPelicula.php",datosPelicula);
         this.peliculas = getPeliculas();
-        Set keys = datosPelicula.keySet();
-        System.out.println(keys.toString());
+        System.out.println(this.peliculas.toString());
     }
 
     public void eliminarPelicula(String idPelicula){

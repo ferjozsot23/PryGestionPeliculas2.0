@@ -5,11 +5,11 @@ import crud.Adapter;
 import java.util.ArrayList;
 
 public class GestorPelicula {
-    private Pelicula pelicula;
+    private Pelicula pelicula = new Pelicula();
     private Adapter adaptador = new Adapter();
 
     public GestorPelicula(){
-        this.pelicula = null;
+
     }
     //Obtener pelicula ya existente en base de datos
     public void setPelicula(String idPelicula){

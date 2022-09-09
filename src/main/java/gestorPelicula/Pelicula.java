@@ -8,6 +8,7 @@ public class Pelicula {
     private int duracion;
     private double tarifa;
 
+    public Pelicula(){}
     public Pelicula(String titulo, String director, float calificacion, int duracion, double tarifa, String genero, String elenco, String idioma) {
         this.titulo = titulo;
         this.director = director;
@@ -22,14 +23,14 @@ public class Pelicula {
 
     public Pelicula(ArrayList<String> datosPelicula){
         this.idPelicula = datosPelicula.get(0);
-        this.titulo = datosPelicula.get(1);
-        this.director = datosPelicula.get(2);
-        this.calificacion = Float.parseFloat(datosPelicula.get(3));
-        this.duracion = Integer.parseInt(datosPelicula.get(4));
+        this.titulo = datosPelicula.get(6);
+        this.director = datosPelicula.get(3);
+        this.calificacion = Float.parseFloat(datosPelicula.get(2));
+        this.duracion = Integer.parseInt(datosPelicula.get(7));
         this.genero = datosPelicula.get(5);
-        this.elenco = datosPelicula.get(6);
-        this.idioma = datosPelicula.get(7);
-        this.tarifa = Double.parseDouble(datosPelicula.get(8));
+        this.elenco = datosPelicula.get(4);
+        this.idioma = datosPelicula.get(8);
+        this.tarifa = Double.parseDouble(datosPelicula.get(1));
     }
 
     public ArrayList<String> getInformacion() {
