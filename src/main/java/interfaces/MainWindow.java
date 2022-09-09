@@ -19,13 +19,11 @@ public class MainWindow extends JDialog {
         AÑADIRPELÍCULAButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 GUIGestorPelicula pelicula = new GUIGestorPelicula();
-                dispose();
             }
         });
         REALIZARRENTAButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-
                 GUIGestorRenta renta = new GUIGestorRenta();
                 dispose();
             }
