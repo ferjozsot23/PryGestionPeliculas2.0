@@ -16,36 +16,58 @@ public class GUIGestorCliente extends JDialog {
     private JTextField textField4;
     private JTextField textField5;
     private JButton buttonOK;
-    private JComboBox comboBox1;
     private JButton ACTUALIZARButton;
     private JButton ELIMINARButton;
-
+    private JButton BUSCARButton;
+    GestorCliente gestor = new GestorCliente();
     public GUIGestorCliente() {
         setContentPane(contentPane);
         setMinimumSize(new Dimension(900,540));
         setModal(true);
-        this.pack();
-        this.setVisible(true);
-        System.exit(0);
+
         GUARDARButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                GestorCliente gestor= new GestorCliente();
                 gestor.agregarCliente(textField1.getText(), textField2.getText(), textField3.getText(), textField4.getText(), textField5.getText());
+                System.out.println("Se imprimio");
             }
         });
         ACTUALIZARButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                String cedula=textField1.getText();
+                String nombre=textField2.getText();
+                String apellido=textField3.getText();
+                String direccion=textField4.getText();
+                String telefono=textField5.getText();
+                gestor.actualizarCliente(cedula,nombre,apellido,direccion,telefono);
             }
         });
         ELIMINARButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //hola
+                gestor.eliminarCliente(textField1.getText());
+            }
+        });
+        BUSCARButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String cedula=textField1.getText();
+                gestor.setCliente(cedula);
+                textField3.setText(gestor.cliente.getNombre());
+                textField4.setText(gestor.cliente.getApellido());
+                textField5.setText(gestor.cliente.getDireccion());
+                textField2.setText(gestor.cliente.getTelefono());
 
             }
         });
-    }
 
+    }
+    public static void main(String[] args) {
+        GUIGestorCliente dialog = new GUIGestorCliente();
+        //dialog.pack();
+        dialog.setVisible(true);
+        //System.exit(0);
+    }
 }
