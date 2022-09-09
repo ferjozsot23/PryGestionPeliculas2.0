@@ -8,14 +8,13 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 
 public class Renta {
-    private Recibo r;
+    private Recibo recibo;
     private int id_renta;
-    private Cliente c;
     private boolean vigencia;
-    private Copia cp;
+    private int id_Copia;
+    private int id_Cliente;
     private Date fecha_inicio;
     private Date fecha_entrega;
-    private long diasExcedidos;
     private final int diasMaximos = 7;
     private int dias_extendidos;
     SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
@@ -66,39 +65,33 @@ public class Renta {
         return calendar.getTime();
     }
 
-    public void asociarCliente(Cliente c){
-        this.c = c;
-    }
-
-    public void agregarCopia(Copia cp){
-        this.cp = cp;
-    }
-
-    public Cliente getC() {
-        return c;
-    }
-
-    public Copia getCp() {
-        return cp;
-    }
-
     public Recibo getRecibo() {
-        return r;
+        return recibo;
     }
 
     public void asociarRecibo(Recibo r) {
-        this.r = r;
+        this.recibo = r;
+    }
+
+    public int getId_Copia() {
+        return id_Copia;
+    }
+
+    public void setId_Copia(int id_Copia) {
+        this.id_Copia = id_Copia;
+    }
+
+    public int getId_Cliente() {
+        return id_Cliente;
+    }
+
+    public void setId_Cliente(int id_Cliente) {
+        this.id_Cliente = id_Cliente;
     }
 
     // función para agregar la factura por la renta de las películas
     public void emitirFactura(){
        // this.factura = new Recibo(this.copiasRentadas);
-
-    }
-
-    // función para agregar la multa en caso de haber retraso en la fecha de entrega
-    public void emitirMulta(){
-        //this.multa = new Recibo((int)this.diasExcedidos,this.copiasRentadas.size());
 
     }
 
