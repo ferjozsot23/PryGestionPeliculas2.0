@@ -87,15 +87,7 @@ public class Renta {
         calendar.add(Calendar.DAY_OF_YEAR, dias);
         return calendar.getTime();
     }
-/*
-    public Recibo getRecibo() {
-        return recibo;
-    }
 
-    public void asociarRecibo(Recibo r) {
-        this.recibo = r;
-    }
-*/
     public int getId_Copia() {
         return id_Copia;
     }
