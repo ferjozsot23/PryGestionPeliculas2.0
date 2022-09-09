@@ -3,7 +3,7 @@
   <grid id="cbd77" binding="contentPane" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="10" left="10" bottom="10" right="10"/>
     <constraints>
-      <xy x="48" y="54" width="528" height="406"/>
+      <xy x="48" y="54" width="629" height="406"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -446,7 +446,7 @@
                       </component>
                     </children>
                   </grid>
-                  <grid id="d0eba" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                  <grid id="d0eba" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
                       <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -455,7 +455,23 @@
                       <background color="-4676111"/>
                     </properties>
                     <border type="none"/>
-                    <children/>
+                    <children>
+                      <component id="bab81" class="javax.swing.JButton" binding="GUARDARButton" default-binding="true">
+                        <constraints>
+                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-11393146"/>
+                          <foreground color="-1"/>
+                          <text value="GUARDAR"/>
+                        </properties>
+                      </component>
+                      <hspacer id="dd33a">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                      </hspacer>
+                    </children>
                   </grid>
                   <grid id="790b" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
@@ -474,10 +490,21 @@
                       <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <background color="-4676111"/>
+                      <background color="-11393146"/>
                     </properties>
                     <border type="none"/>
-                    <children/>
+                    <children>
+                      <component id="c2b91" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <font name="Droid Sans Mono" size="16" style="1"/>
+                          <foreground color="-1"/>
+                          <text value="SELECCIONE"/>
+                        </properties>
+                      </component>
+                    </children>
                   </grid>
                   <grid id="66923" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
@@ -488,9 +515,16 @@
                       <background color="-4676111"/>
                     </properties>
                     <border type="none"/>
-                    <children/>
+                    <children>
+                      <component id="192f6" class="javax.swing.JComboBox" binding="comboBox1" default-binding="true">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties/>
+                      </component>
+                    </children>
                   </grid>
-                  <grid id="c59f4" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                  <grid id="c59f4" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
                       <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -499,9 +533,32 @@
                       <background color="-4676111"/>
                     </properties>
                     <border type="none"/>
-                    <children/>
+                    <children>
+                      <component id="18456" class="javax.swing.JButton" binding="button1" default-binding="true">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-11393146"/>
+                          <font name="Droid Sans Mono" size="16" style="1"/>
+                          <foreground color="-1"/>
+                          <text value="ACTUALIZAR"/>
+                        </properties>
+                      </component>
+                      <component id="ad130" class="javax.swing.JButton" binding="button2" default-binding="true">
+                        <constraints>
+                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-11393146"/>
+                          <font name="Droid Sans Mono" size="16" style="1"/>
+                          <foreground color="-1"/>
+                          <text value="ELIMINAR"/>
+                        </properties>
+                      </component>
+                    </children>
                   </grid>
-                  <grid id="d0d2b" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                  <grid id="d0d2b" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
                       <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -510,23 +567,7 @@
                       <background color="-4676111"/>
                     </properties>
                     <border type="none"/>
-                    <children>
-                      <component id="bab81" class="javax.swing.JButton" binding="GUARDARButton" default-binding="true">
-                        <constraints>
-                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                        </constraints>
-                        <properties>
-                          <background color="-11393146"/>
-                          <foreground color="-1"/>
-                          <text value="GUARDAR"/>
-                        </properties>
-                      </component>
-                      <hspacer id="93af3">
-                        <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                        </constraints>
-                      </hspacer>
-                    </children>
+                    <children/>
                   </grid>
                 </children>
               </grid>
