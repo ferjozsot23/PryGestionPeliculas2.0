@@ -16,12 +16,17 @@ public class GestorRenta {
     private Recibo multa;
     private int dias;
     private ArrayList<String> rentainfo = new ArrayList<>();
+    private ArrayList<String> reciboinfo = new ArrayList<>();
     SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
     private AdapterRenta adaptadorRenta = new AdapterRenta();
     private AdapterRecibo adapterRecibo = new AdapterRecibo();
 
     public void agregarRenta(){
         adaptadorRenta.insertarRenta(renta);
+    }
+
+    public void obtenerInformacionRecibo(int idRecibo){
+        this.reciboinfo = adapterRecibo.getRecibo(String.valueOf(idRecibo));
     }
 
     public void actualizarFechaFinalizacion(ArrayList<String> informacionRenta) throws ParseException {
