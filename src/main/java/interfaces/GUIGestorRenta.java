@@ -43,7 +43,7 @@ public class GUIGestorRenta extends JDialog {
         GUARDARButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                //el id de recibo
+                //el id de recibo debe ser el mismo que el id de la renta
                 gestorRenta.crearRenta(tfIdCliente.getText(),cbIdCopia.getSelectedIndex(),1);
             }
         });
