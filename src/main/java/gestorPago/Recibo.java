@@ -27,7 +27,7 @@ public  class Recibo {
 //        //Consultar a la base de datos el ultimo numero de factura registrado/
 //        this.numeroFactura=1;
         fecha = new java.util.Date();
-//        this.contenido=contenido;
+//       this.contenido=contenido;
 //
         this.monto=calcularSubTotal();
     }
