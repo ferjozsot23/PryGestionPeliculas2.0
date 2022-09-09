@@ -30,6 +30,7 @@ public class GestorRenta {
         this.reciboinfo = adapterRecibo.getRecibo(String.valueOf(idRecibo));
     }
 
+
     public void actualizarFechaFinalizacion(ArrayList<String> informacionRenta) throws ParseException {
         renta = new Renta(informacionRenta);
         adaptadorRenta.actualizarRenta(renta);

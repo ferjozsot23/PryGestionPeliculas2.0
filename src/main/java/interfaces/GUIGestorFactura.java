@@ -1,5 +1,7 @@
 package interfaces;
 
+import gestorPago.GestorRenta;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -10,14 +12,14 @@ public class GUIGestorFactura extends JDialog {
     private JTextField textField1;
     private JButton GUARDARButton;
     private JButton BUSCARButton;
-    private JTextField textField2;
-    private JTextField textField3;
-    private JTextField textField4;
-    private JTextField textField5;
-    private JTextField textField6;
+    private JTextField tfNumeroRenta;
+    private JTextField tfNombreCliente;
+    private JTextField tfApellidoCliente;
+    private JTextField tfIdCliente;
+    private JTextField tfFecha;
     private JTextField textField7;
-    private JTextField textField8;
-    private JTextField textField9;
+    private JTextField tfDiasRenta;
+    private JTextField tfTotalCancelar;
 
     public GUIGestorFactura() {
         setContentPane(contentPane);
@@ -26,10 +28,12 @@ public class GUIGestorFactura extends JDialog {
         this.pack();
         this.setVisible(true);
         System.exit(0);
+        GestorRenta gestorRenta = new GestorRenta();
         GUARDARButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 
+                gestorRenta.emitirRecibo();
             }
         });
         BUSCARButton.addActionListener(new ActionListener() {

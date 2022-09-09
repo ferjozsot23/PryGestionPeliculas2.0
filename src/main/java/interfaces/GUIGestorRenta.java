@@ -1,5 +1,7 @@
 package interfaces;
 
+import gestorPago.GestorRenta;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -10,8 +12,8 @@ public class GUIGestorRenta extends JDialog {
     private JButton BUSCARButton;
     private JButton AÑADIRButton;
     private JTextField textField1;
-    private JComboBox comboBox1;
-    private JTextField textField2;
+    private JComboBox cbIdCopia;
+    private JTextField tfIdCliente;
     private JTextField textField3;
     private JTextField textField4;
     private JTextField textField5;
@@ -24,6 +26,8 @@ public class GUIGestorRenta extends JDialog {
         this.pack();
         this.setVisible(true);
         System.exit(0);
+
+        GestorRenta gestorRenta = new GestorRenta();
         AÑADIRButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -39,7 +43,8 @@ public class GUIGestorRenta extends JDialog {
         GUARDARButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-
+                //el id de recibo
+                gestorRenta.crearRenta(tfIdCliente.getText(),cbIdCopia.getSelectedIndex(),1);
             }
         });
     }

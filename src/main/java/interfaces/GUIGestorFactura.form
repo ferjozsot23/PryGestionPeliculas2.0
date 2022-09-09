@@ -217,7 +217,7 @@
                     <properties/>
                     <border type="none"/>
                     <children>
-                      <component id="cdd3d" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+                      <component id="cdd3d" class="javax.swing.JTextField" binding="tfNumeroRenta" default-binding="true">
                         <constraints>
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                             <preferred-size width="150" height="-1"/>
@@ -274,7 +274,7 @@
                     <properties/>
                     <border type="none"/>
                     <children>
-                      <component id="125e6" class="javax.swing.JTextField" binding="textField3" default-binding="true">
+                      <component id="125e6" class="javax.swing.JTextField" binding="tfNombreCliente" default-binding="true">
                         <constraints>
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                             <preferred-size width="150" height="-1"/>
@@ -331,7 +331,7 @@
                     <properties/>
                     <border type="none"/>
                     <children>
-                      <component id="344d4" class="javax.swing.JTextField" binding="textField4" default-binding="true">
+                      <component id="344d4" class="javax.swing.JTextField" binding="tfApellidoCliente" default-binding="true">
                         <constraints>
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                             <preferred-size width="150" height="-1"/>
@@ -388,7 +388,7 @@
                     <properties/>
                     <border type="none"/>
                     <children>
-                      <component id="e7a27" class="javax.swing.JTextField" binding="textField5" default-binding="true">
+                      <component id="e7a27" class="javax.swing.JTextField" binding="tfIdCliente" default-binding="true">
                         <constraints>
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                             <preferred-size width="150" height="-1"/>
@@ -479,7 +479,7 @@
                     <properties/>
                     <border type="none"/>
                     <children>
-                      <component id="ed481" class="javax.swing.JTextField" binding="textField6" default-binding="true">
+                      <component id="ed481" class="javax.swing.JTextField" binding="tfFecha" default-binding="true">
                         <constraints>
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                             <preferred-size width="150" height="-1"/>
@@ -593,7 +593,7 @@
                     <properties/>
                     <border type="none"/>
                     <children>
-                      <component id="57c9b" class="javax.swing.JTextField" binding="textField8" default-binding="true">
+                      <component id="57c9b" class="javax.swing.JTextField" binding="tfDiasRenta" default-binding="true">
                         <constraints>
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                             <preferred-size width="150" height="-1"/>
@@ -650,7 +650,7 @@
                     <properties/>
                     <border type="none"/>
                     <children>
-                      <component id="db03c" class="javax.swing.JTextField" binding="textField9" default-binding="true">
+                      <component id="db03c" class="javax.swing.JTextField" binding="tfTotalCancelar" default-binding="true">
                         <constraints>
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                             <preferred-size width="150" height="-1"/>
