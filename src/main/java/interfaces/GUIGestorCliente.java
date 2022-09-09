@@ -1,5 +1,7 @@
 package interfaces;
 
+import gestorCliente.GestorCliente;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -25,7 +27,8 @@ public class GUIGestorCliente extends JDialog {
         GUARDARButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-
+                GestorCliente gestor= new GestorCliente();
+                gestor.agregarCliente(textField1.getText(), textField2.getText(), textField3.getText(), textField4.getText(), textField5.getText());
             }
         });
     }
