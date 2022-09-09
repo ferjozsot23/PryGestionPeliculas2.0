@@ -16,6 +16,9 @@ public class GUIGestorCliente extends JDialog {
     private JTextField textField4;
     private JTextField textField5;
     private JButton buttonOK;
+    private JComboBox comboBox1;
+    private JButton button1;
+    private JButton button2;
 
     public GUIGestorCliente() {
         setContentPane(contentPane);
