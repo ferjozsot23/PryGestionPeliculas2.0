@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class GestorPelicula {
-    private Recibo pelicula = new Recibo();
+    private Pelicula pelicula = new Pelicula();
     private AdapterPelicula adaptador = new AdapterPelicula();
 
     public GestorPelicula(){
@@ -14,7 +14,7 @@ public class GestorPelicula {
     }
     //Obtener pelicula ya existente en base de datos
     public void setPelicula(String idPelicula){
-        pelicula = new Recibo(adaptador.getPelicula(idPelicula));
+        pelicula = new Pelicula(adaptador.getPelicula(idPelicula));
     }
 
     public ArrayList<String> extraerDatosPelicula(){
@@ -26,7 +26,7 @@ public class GestorPelicula {
     }
     //Crear pelicula y enviar a la base da datos
     public void agregarPelicula(String titulo, String director, float calificacion, int duracion, double tarifa,String genero, String elenco, String idioma){
-        this.pelicula = new Recibo(titulo, director, calificacion, duracion, tarifa, genero, elenco, idioma);
+        this.pelicula = new Pelicula(titulo, director, calificacion, duracion, tarifa, genero, elenco, idioma);
         adaptador.insertPelicula(this.pelicula);
         this.pelicula.setIdPelicula(adaptador.getPeliculaPorTitulo(titulo).get(0));
     }

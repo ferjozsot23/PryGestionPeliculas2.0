@@ -79,7 +79,7 @@ public class AdapterCliente {
 
     public void actualizarCliente(Cliente cliente){
         HashMap<String,String> datosCliente = new HashMap<>();
-        datosCliente.put("id_cliente",cliente.getIdCliente());
+        datosCliente.put("id_cliente",cliente.getIdentificacion());
         datosCliente.put("nombre",cliente.getNombre());
         datosCliente.put("apellido", cliente.getApellido());
         datosCliente.put("direccion",cliente.getDireccion());
