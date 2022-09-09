@@ -30,9 +30,8 @@ public  class Recibo {
 
         this.monto=calcularSubTotal();
     }
-    public Recibo(int dias){
-        //        //Consultar a la base de datos el ultimo numero de factura registrado/
-//        this.numeroFactura=1;
+    public Recibo(int id_recibo, int dias){
+        this.id_recibo=id_recibo;
         fecha = new java.util.Date();
         this.multa= (float) (Math.round((dias*0.75)*100.0)/100.0);
     }
@@ -60,8 +59,6 @@ public  class Recibo {
     }
 
     public float calcularSubTotal() {
-        //alquilar una pelicula cuesta 1.5$, sin impuestos
-        //float subTotal= (float) (this.contenido.size()*1.5);
         float subTotal= 1.5F;
         subTotal=(float) (Math.round(subTotal*100.0)/100.0);
         return subTotal;
@@ -71,15 +68,7 @@ public  class Recibo {
         float impuesto=(float) (0.12*monto);
         return  impuesto;
     }
-    public float calcularVuelto(float entrega){
-        //se retorna -1 si es que el efectivo entregado es inferior al precio total a pagar
-        if(entrega<calcularTotal()){
-            return -1;
-        }
-        float vuelto = entrega-calcularTotal();
-        vuelto=(float) (Math.round(vuelto*100.0)/100.0);
-        return vuelto;
-    }
+
 
     public String getDetalles(){ return this.detalles; }
 
