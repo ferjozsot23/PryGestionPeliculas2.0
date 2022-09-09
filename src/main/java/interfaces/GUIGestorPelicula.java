@@ -5,8 +5,7 @@ import org.w3c.dom.ls.LSOutput;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -31,29 +30,19 @@ public class GUIGestorPelicula extends JDialog {
     HashMap<String, ArrayList<String>> peliculas = gestorPelicula.getPeliculas();
     ArrayList<ArrayList> peliculasCMB = new ArrayList<>();
 
-    public void actualizarComboBox(){
-        cmbPeliculas.removeAllItems();
-        peliculasCMB = new ArrayList<>();
-        peliculas.forEach((key,value)->{
-            peliculasCMB.add(value);
-            cmbPeliculas.addItem(new ComboItem("hooa","aaaa"));
-            //cmbPeliculas.addItem(value.get(6).toString());
-        });
-        //cmbPeliculas.addItem();
-    }
+
 
     public GUIGestorPelicula() {
         setContentPane(contentPane);
         setMinimumSize(new Dimension(900,540));
         setModal(true);
+        peliculas = gestorPelicula.getPeliculas();
+        System.out.println(peliculas.toString());
+        actualizarComboBox();
         this.pack();
         this.setVisible(true);
-        peliculas = gestorPelicula.getPeliculas();
-        actualizarComboBox();
+
         System.exit(0);
-
-
-
 
 
         ELIMINARButton.addActionListener(new ActionListener() {
@@ -105,10 +94,41 @@ public class GUIGestorPelicula extends JDialog {
                 tFTarifa.setText(peliculasCMB.get(selected).get(1).toString());
             }
         });
+
+        cmbPeliculas.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                int selected = cmbPeliculas.getSelectedIndex();
+                tFTitulo.setText(peliculasCMB.get(selected).get(6).toString());
+                tFDirector.setText(peliculasCMB.get(selected).get(3).toString());
+                tFCalificacion.setText(peliculasCMB.get(selected).get(2).toString());
+                tFDuracion.setText(peliculasCMB.get(selected).get(7).toString());
+                tFGenero.setText(peliculasCMB.get(selected).get(5).toString());
+                tFElenco.setText(peliculasCMB.get(selected).get(4).toString());
+                tFIdioma.setText(peliculasCMB.get(selected).get(8).toString());
+                tFTarifa.setText(peliculasCMB.get(selected).get(1).toString());
+            }
+        });
+        GUARDARButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("ola");
+            }
+        });
     }
 
     private void createUIComponents() {
         // TODO: place custom component creation code here
+    }
+    public void actualizarComboBox(){
+        //cmbPeliculas.removeAllItems();
+        peliculasCMB = new ArrayList<>();
+        peliculas.forEach((key,value)->{
+            peliculasCMB.add(value);
+            //cmbPeliculas.addItem(new ComboItem("hooa","aaaa"));
+            cmbPeliculas.addItem(value.get(6));
+        });
+        //cmbPeliculas.addItem();
     }
     public static void main(String[] args) {
         GUIGestorPelicula dialog = new GUIGestorPelicula();
@@ -118,7 +138,7 @@ public class GUIGestorPelicula extends JDialog {
     }
 }
 
-class ComboItem {
+/*class ComboItem {
     public String key;
     public String value;
 
@@ -126,7 +146,7 @@ class ComboItem {
         this.key = key;
         this.value = value;
     }
-}
+}*/
 
 
 
