@@ -31,9 +31,9 @@ public class GUIGestorRenta extends JDialog {
         setContentPane(contentPane);
         setMinimumSize(new Dimension(900,540));
         setModal(true);
-        //this.pack();
-        //this.setVisible(true);
-        //System.exit(0);
+        this.pack();
+        this.setVisible(true);
+        System.exit(0);
 
         GestorRenta gestorRenta = new GestorRenta();
         GestorCliente gestorCliente = new GestorCliente();

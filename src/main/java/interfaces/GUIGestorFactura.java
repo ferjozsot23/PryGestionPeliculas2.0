@@ -55,6 +55,7 @@ public class GUIGestorFactura extends JDialog {
                 }
             }
         });
+
         BUSCARButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
