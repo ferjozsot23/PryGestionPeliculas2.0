@@ -38,6 +38,15 @@ public class AdapterRecibo {
         return (ArrayList) this.recibos.get(idRecibo);
     }
 
+    public void emitirRecibo(Recibo recibo){
+        HashMap<String,String> datosRecibo = new HashMap<>();
+        datosRecibo.put("fecha", recibo.getFecha());
+        datosRecibo.put("monto", Float.toString(recibo.getMonto()));
+        crud.insertarDatos("http://unisatelite.com/Movies/insertarRecibo.php", datosRecibo);
+        this.recibos = getRecibos();
+        System.out.println(this.recibos.toString());
+    }
+
     public void insertRecibo(Recibo recibo){
         HashMap<String,String> datosRecibo = new HashMap<>();
         datosRecibo.put("fecha", recibo.getFecha());

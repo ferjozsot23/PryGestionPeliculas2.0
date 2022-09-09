@@ -21,12 +21,13 @@ public class Renta {
     private int dias_extendidos;
     SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
     //constructor
-    public Renta(Date fecha_inicio, String id_Cliente, int id_Copia){
-        this.id_renta = id_renta;
+    public Renta(Date fecha_inicio, String id_Cliente, int id_Copia,int id_Recibo){
+        //this.id_renta = id_renta;
         this.fecha_inicio = fecha_inicio; //fecha del inicio de la renta
         this.fecha_entrega = null;
         this.id_Copia = id_Copia;
         this.id_Cliente = id_Cliente;
+        this.id_Recibo = id_Recibo;
     }
 
     public Renta(int id_Copia, String id_Cliente, Date fecha_inicio, Date fecha_entrega, int dias_extendidos) {

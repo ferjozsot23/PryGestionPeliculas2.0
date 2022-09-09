@@ -6,6 +6,7 @@ import crud.AdapterRenta;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 
 public class GestorRenta {
 
@@ -21,8 +22,9 @@ public class GestorRenta {
         adaptadorRenta.insertarRenta(renta);
     }
 
-    public void crearRenta(Date fechaInicio, String id_Cliente, int id_Copia){
-        renta = new Renta(fechaInicio, id_Cliente,id_Copia);
+    public void crearRenta(Date fechaInicio, String id_Cliente, int id_Copia, int id_recibo){
+        renta = new Renta(fechaInicio, id_Cliente,id_Copia,id_recibo);
+        adaptadorRenta.insertarRenta(renta);
     }
 
     public void finalizarRenta(Date fechaFin){
@@ -41,9 +43,18 @@ public class GestorRenta {
 
     public void emitirRecibo(){
         recibo = new Recibo();  //datos del cliente
-        adapterRecibo.insertRecibo(new Recibo());
-
+        adapterRecibo.emitirRecibo(new Recibo());
     }
+
+    public HashMap<String,ArrayList> obtenerRecibos(){
+        return adapterRecibo.getRecibos();
+    }
+
+    public HashMap<String,ArrayList> obtenerRentas(){
+        return adaptadorRenta.getRentas();
+    }
+
+
 
 
     public void establecerDiasExtendidos(Date fechaEntrega, Date fechaInicio){

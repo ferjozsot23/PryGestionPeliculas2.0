@@ -25,7 +25,7 @@ public  class Recibo {
 
     //aqui se reciben un listado de copias; cambiar String por copia
     public Recibo() {
-        this.id_recibo=id_recibo;
+        //this.id_recibo=id_recibo;
         fecha = new java.util.Date();
         this.monto=calcularSubTotal();
     }
