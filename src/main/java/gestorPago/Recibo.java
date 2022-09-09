@@ -25,7 +25,7 @@ public  class Recibo {
     SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
 
     //aqui se reciben un listado de copias; cambiar String por copia
-    public Recibo() {
+    public Recibo(int dias) {
         //this.id_recibo=id_recibo;
         fecha = new java.util.Date();
         this.monto=calcularSubTotal();

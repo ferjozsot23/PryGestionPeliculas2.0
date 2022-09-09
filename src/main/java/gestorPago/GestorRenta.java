@@ -59,9 +59,9 @@ public class GestorRenta {
 
     }
 
-    public void emitirRecibo(){
-        recibo = new Recibo();  //datos del cliente
-        adapterRecibo.emitirRecibo(new Recibo());
+    public void emitirRecibo(int dias){
+        recibo = new Recibo(dias);  //datos del cliente
+        adapterRecibo.emitirRecibo(new Recibo(dias));
     }
 
 
