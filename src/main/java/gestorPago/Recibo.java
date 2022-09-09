@@ -28,7 +28,7 @@ public  class Recibo {
     public Recibo(int dias) {
         //this.id_recibo=id_recibo;
         fecha = new java.util.Date();
-        this.monto=calcularSubTotal();
+        this.monto=calcularSubTotal(dias);
         generarDetalles();
     }
     public Recibo(ArrayList<String> reciboInformacion) {
@@ -61,9 +61,9 @@ public  class Recibo {
         return total;
     }
 
-    public float calcularSubTotal() {
+    public float calcularSubTotal(int dias) {
         float subTotal= 1.5F;
-        subTotal=(float) (Math.round(subTotal*100.0)/100.0);
+        subTotal=(float) (Math.round(subTotal*dias*100.0)/100.0);
         return subTotal;
     }
 

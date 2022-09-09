@@ -32,8 +32,8 @@ public class GUIGestorFactura extends JDialog {
         GUARDARButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-
                 gestorRenta.emitirRecibo(Integer.parseInt(tfDiasRenta.getText()));
+                tfTotalCancelar.setText(Float.toString(gestorRenta.getMonto()));
             }
         });
         BUSCARButton.addActionListener(new ActionListener() {
