@@ -12,6 +12,10 @@ public class TestConection {
         //System.out.println(gestorPelicula.extraerDatosPelicula().toString());
         GestorRenta gestor = new GestorRenta();
         //gestor.agregarRenta(new java.util.Date(),"3654982152",1);
+        //gestor.emitirRecibo();
+        System.out.println(gestor.obtenerRecibos().toString());
+        //gestor.crearRenta("1354985644",1,2);
+        System.out.println(gestor.obtenerRentas().toString());
 
     }
 }

@@ -44,8 +44,8 @@ public class AdapterRenta {
     public void insertarRenta(Renta renta){
         HashMap<String,String> datosRenta = new HashMap<>();
         datosRenta.put("fecha_inicio",date.format(renta.getFecha_Inicio()));
-        datosRenta.put("fecha_entrega", date.format(renta.getFecha_entrega()));
-        datosRenta.put("dias_extendidos",Float.toString(renta.getDias_extendidos()));
+        //datosRenta.put("fecha_entrega", date.format(renta.getFecha_entrega()));
+        //datosRenta.put("dias_extendidos",Float.toString(renta.getDias_extendidos()));
         datosRenta.put("id_recibo", Integer.toString(renta.getId_Recibo()));
         datosRenta.put("id_cliente",String.valueOf(renta.getId_Cliente()));
         datosRenta.put("id_copia", String.valueOf(renta.getId_Copia()));
