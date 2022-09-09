@@ -2,7 +2,6 @@ package gestorCliente;
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
 import crud.AdapterCliente;
-import gestorPelicula.Recibo;
 
 public class GestorCliente {
     private ArrayList<Cliente> listaCliente =new ArrayList<Cliente>();

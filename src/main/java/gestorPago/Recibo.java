@@ -48,24 +48,6 @@ public  class Recibo {
 
         detalles+="_____________\n";
         detalles+="Producto                       Precio\n";
-
-//        for(Copia pelicula: contenido){
-//            //del titulo de la pelicula se observan solo 20 caracteres
-//            if(pelicula.titulo.length()>=30){
-//                detalles += pelicula.titulo.substring(0,29)+"   "+pelicula.precio+"\n";
-//            }else{
-//                detalles += pelicula.titulo+"                 "+pelicula.precio+"\n";
-//            }
-        /*
-        for(String pelicula: contenido){
-           //del titulo de la pelicula se observan solo 20 caracteres
-           if(pelicula.titulo.length()>=30){
-                detalles += pelicula.titulo.substring(0,29)+"   "+1.5+"\n";
-            }else{
-                detalles += pelicula.titulo+"                 "+1.5+"\n";
-            }
-        }
-        */
         detalles+="_____________\n";
         detalles+="Sub Total: "+monto+"\n";
         detalles+="12% IVA: "+calcularImpuestos()+"\n";
