@@ -111,20 +111,6 @@ public class Renta {
     public void setId_Cliente(String id_Cliente) {
         this.id_Cliente = id_Cliente;
     }
-/*
-    public Copia getCp() {
-        return cp;
-    }
-
-    public void agregarCopia(Copia cp) {
-        this.cp = cp;
-    }
-*/
-    // función para agregar la factura por la renta de las películas
-
-
-
-
 
 }
 
