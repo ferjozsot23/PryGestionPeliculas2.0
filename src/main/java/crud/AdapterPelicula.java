@@ -97,18 +97,19 @@ public class AdapterPelicula {
     }
 
 
-    public void insertarCopias(Copia copia){
+    public void insertarCopias(int numeroCopias, String idPelicula){
+        for(int i=0; i<numeroCopias; i++ ){
+            HashMap<String,String> datosCopia = new HashMap<>();
+            datosCopia.put("disponible","true");
+            datosCopia.put("id_pelicula",idPelicula);
+            crud.insertarDatos("http://unisatelite.com/Movies/insertarCopia.php",datosCopia);
+        }
+    }
+
+    public void eliminarCopia(String idCopia){
         HashMap<String,String> datosCopia = new HashMap<>();
-        datosCopia.put("disponible",copia.isDisponible());
-        datosCopia.put("director", copia.getDirector());
-        datosCopia.put("calificacion",Float.toString(copia.getCalificacion()));
-        datosCopia.put("duracion", Integer.toString(copia.getDuracion()));
-        datosCopia.put("genero",copia.getGenero());
-        datosCopia.put("elenco", copia.getElenco());
-        datosCopia.put("idioma",copia.getIdioma());
-        datosCopia.put("tarifa",Double.toString(copia.getTarifa()));
-        crud.insertarDatos("http://unisatelite.com/Movies/insertarPelicula.php",datosCopia);
+        datosCopia.put("id_copia",idCopia);
+        crud.insertarDatos("http://unisatelite.com/Movies/borrarCopia.php",datosCopia);
         this.peliculas = getPeliculas();
-        System.out.println(this.peliculas.toString());
     }
 }
