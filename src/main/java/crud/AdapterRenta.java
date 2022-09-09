@@ -46,9 +46,9 @@ public class AdapterRenta {
         datosRenta.put("fecha_inicio",renta.getFecha_Inicio());
         datosRenta.put("fecha_entrega", renta.getFecha_entrega());
         datosRenta.put("dias_extendidos",Float.toString(renta.getDias_extendidos()));
-        datosRenta.put("id_recibo", Integer.toString(renta.getId_renta()));
-        datosRenta.put("id_cliente",renta.getGenero());
-        datosRenta.put("id_copia", renta.getElenco());
+        datosRenta.put("id_recibo", Integer.toString(renta.getRecibo().getId_recibo()));
+        datosRenta.put("id_cliente",renta.getC().getIdentificacion());
+        datosRenta.put("id_copia", renta.getCp().getIdCopia());
         crud.insertarDatos("http://unisatelite.com/Movies/insertarRenta.php",datosRenta);
         this.rentas = getRentas();
         System.out.println(this.rentas.toString());
@@ -67,7 +67,7 @@ public class AdapterRenta {
         datosRenta.put("fecha_inicio",renta.getFecha_Inicio());
         datosRenta.put("fecha_entrega", renta.getFecha_entrega());
         datosRenta.put("dias_extendidos",Float.toString(renta.getDias_extendidos()));
-        datosRenta.put("id_recibo", Integer.toString(renta.getId_renta()));
+        datosRenta.put("id_recibo", Integer.toString(renta.getRecibo().getId_recibo()));
         datosRenta.put("id_cliente",renta.getC().getIdentificacion());
         datosRenta.put("id_copia", renta.getCp().getIdCopia());
         crud.insertarDatos("http://unisatelite.com/Movies/actualizarRenta.php",datosRenta);

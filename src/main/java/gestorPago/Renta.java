@@ -8,6 +8,7 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 
 public class Renta {
+    private Recibo r;
     private int id_renta;
     private Cliente c;
     private boolean vigencia;
@@ -79,6 +80,14 @@ public class Renta {
 
     public Copia getCp() {
         return cp;
+    }
+
+    public Recibo getRecibo() {
+        return r;
+    }
+
+    public void asociarRecibo(Recibo r) {
+        this.r = r;
     }
 
     // función para agregar la factura por la renta de las películas
