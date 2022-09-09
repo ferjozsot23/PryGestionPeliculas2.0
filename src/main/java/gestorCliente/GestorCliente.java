@@ -30,6 +30,9 @@ public class GestorCliente {
         this.cliente.setInformacion(identificacion, nombre, apellido, direccion, telefono);
         adaptadorCliente.actualizarCliente(this.cliente);
     }
+    public ArrayList<String> obtenerInformacionCliente(String idCliente){
+        return adaptadorCliente.getCliente(idCliente);
+    }
     public HashMap<String,ArrayList<String>> getClientes(){
         return adaptadorCliente.getClientes();
     }

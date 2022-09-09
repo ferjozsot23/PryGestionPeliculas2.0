@@ -50,8 +50,9 @@ public class GestorRenta {
         establecerDiasExtendidos(renta.getFecha_Inicio(),fechaFin);
     }
 
-    public void obtenerInformacionRenta(int idRenta){
+    public ArrayList<String> obtenerInformacionRenta(int idRenta){
         this.rentainfo = adaptadorRenta.getRenta(String.valueOf(idRenta));
+        return this.rentainfo;
     }
 
     public void finalizarRenta(int idRenta, Date fechaEntrega){
@@ -66,8 +67,13 @@ public class GestorRenta {
     public float getMonto(){
         return recibo.getMonto();
     }
+    public String getFecha(){
+        return date.format(new java.util.Date());
+    }
 
-
+    public void setDetalle(String detalle){
+        recibo.setDetalles(detalle);
+    }
 
     public HashMap<String,ArrayList> obtenerRecibos(){
         return adapterRecibo.getRecibos();
@@ -78,7 +84,11 @@ public class GestorRenta {
     }
 
 
-
+    public int obtenerDias(int idRenta, String fechaEntrega) throws ParseException {
+        obtenerInformacionRenta(idRenta);
+        Date fechainicio = date.parse(rentainfo.get(1));
+        return date.parse(fechaEntrega).getDay() - fechainicio.getDay();
+    }
 
     public void establecerDiasExtendidos(Date fechaEntrega, Date fechaInicio){
         renta.setDias_extendidos(fechaEntrega.getDay() - fechaInicio.getDay());

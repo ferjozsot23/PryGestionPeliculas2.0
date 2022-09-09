@@ -27,6 +27,7 @@ public class MainWindow extends JDialog {
             public void actionPerformed(ActionEvent actionEvent) {
 
                 GUIGestorRenta renta = new GUIGestorRenta();
+                dispose();
             }
         });
         GENERARFACTURAButton.addActionListener(new ActionListener() {
