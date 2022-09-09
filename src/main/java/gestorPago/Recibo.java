@@ -40,33 +40,18 @@ public  class Recibo {
     public void generarDetalles(Cliente cliente, float efectivo){//efectivo: dinero fisico entregado por el comprador
         detalles="              ALQUILER               \n";
         detalles+="Fecha: Quito, "+fecha+"\n";
-
         detalles+=cliente.toString();
-
-        detalles+="_____________\n";
-        detalles+="Producto                       Precio\n";
-        detalles+="_____________\n";
-        detalles+="Sub Total: "+monto+"\n";
-        detalles+="12% IVA: "+calcularImpuestos()+"\n";
+        detalles+="Producto     Precio\n";
+        detalles+="Alquiler      "+this.monto+"\n";
         detalles+="Total USD: "+calcularTotal()+"\n";
-        detalles+="Valor Efectivo: "+efectivo+"\n";
-        detalles+="Valor Cambio: "+calcularVuelto(efectivo)+"\n";
     }
     public void generarDetallesMulta(Cliente cliente, float efectivo){//efectivo: dinero fisico entregado por el comprador
-        detalles="                MULTA                \n";
+        detalles="MULTA\n";
         detalles+="Fecha: Quito, "+fecha+"\n";
-
         detalles+=cliente.toString();
-
-        detalles+="_____________\n";
-        detalles+="Descripcion                    Costo \n";
-        detalles+="Multa                         \n"+this.multa;
-        detalles+="_____________\n";
-        detalles+="Sub Total: "+monto+"\n";
-        detalles+="12% IVA: "+calcularImpuestos()+"\n";
+        detalles+="Descripcion  Costo \n";
+        detalles+="Multa      "+this.multa+"\n";
         detalles+="Total USD: "+calcularTotal()+"\n";
-        detalles+="Valor Efectivo: "+efectivo+"\n";
-        detalles+="Valor Cambio: "+calcularVuelto(efectivo)+"\n";
     }
     public float calcularTotal() {
         float total=monto+calcularImpuestos();
@@ -86,7 +71,6 @@ public  class Recibo {
         float impuesto=(float) (0.12*monto);
         return  impuesto;
     }
-
     public float calcularVuelto(float entrega){
         //se retorna -1 si es que el efectivo entregado es inferior al precio total a pagar
         if(entrega<calcularTotal()){
@@ -96,17 +80,7 @@ public  class Recibo {
         vuelto=(float) (Math.round(vuelto*100.0)/100.0);
         return vuelto;
     }
-    /*
-    public ArrayList<String> getInformacion() {
-        ArrayList<String> informacion = new ArrayList<>();
-        informacion.add(Integer.toString(this.id_recibo));
-        informacion.add(this.fecha.toString());
-        informacion.add(Float.toString(this.monto));
-        informacion.add(this.detalles);
-        informacion.add(Float.toString(this.multa));
-        return informacion;
-    }
-*/
+
     public String getDetalles(){ return this.detalles; }
 
     public int getId_recibo() { return id_recibo; }
