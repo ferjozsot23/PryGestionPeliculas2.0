@@ -4,11 +4,12 @@ import gestorCliente.Cliente;
 
 import java.time.LocalDateTime;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public  class Recibo {
     //
-    int numeroFactura;
+    int id_recibo;
     LocalDateTime fecha;
     float monto;
     String detalles;
@@ -117,15 +118,23 @@ public  class Recibo {
         vuelto=(float) (Math.round(vuelto*100.0)/100.0);
         return vuelto;
     }
-
-    //
-//    public void registrarDatos() {
-//
-//    }
-//
-    // getter para detalle
-    public String getDetalles(){
-        return this.detalles;
+    public ArrayList<String> getInformacion() {
+        ArrayList<String> informacion = new ArrayList<>();
+        informacion.add(Integer.toString(this.id_recibo));
+        informacion.add(this.fecha.toString());
+        informacion.add(Float.toString(this.monto));
+        informacion.add(this.detalles);
+        informacion.add(Float.toString(this.multa));
+        return informacion;
     }
 
+    public String getDetalles(){ return this.detalles; }
+
+    public int getId_recibo() { return id_recibo; }
+
+    public LocalDateTime getFecha() { return fecha; }
+
+    public float getMonto() { return monto; }
+
+    public float getMulta() { return multa; }
 }
