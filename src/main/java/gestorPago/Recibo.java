@@ -35,10 +35,12 @@ public  class Recibo {
         detalles="";
         detalles+="ALQUILER\tFecha: Quito, "+fecha+"\tDescripcion: Alquiler\t"+"Total USD: "+calcularTotal();
     }
+    /*
     public void generarDetallesMulta(){//efectivo: dinero fisico entregado por el comprador
         detalles="";
         detalles+="Multa\tFecha: Quito, "+fecha+"\tDescripcion: Multa\t"+"Total USD: "+calcularTotal();
     }
+    */
     public float calcularTotal() {
         float total=monto+calcularImpuestos();
         total=(float) (Math.round(total*100.0)/100.0);
