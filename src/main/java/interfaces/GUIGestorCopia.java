@@ -21,7 +21,8 @@ public class GUIGestorCopia extends JDialog {
     public GUIGestorCopia() {
         setContentPane(contentPane);
         setModal(true);
-
+        this.setVisible(true);
+        dispose();
         cargarPeliculas();
         cargarCopias();
 
@@ -68,13 +69,4 @@ public class GUIGestorCopia extends JDialog {
             cBCopia.addItem(key + "-" +  gestorPelicula.getPelicula(value.get(0)).get(6));
         });
     }
-
-    public static void main(String[] args) {
-        GUIGestorCopia dialog = new GUIGestorCopia();
-        dialog.pack();
-        dialog.setVisible(true);
-        System.exit(0);
-    }
-
-
 }

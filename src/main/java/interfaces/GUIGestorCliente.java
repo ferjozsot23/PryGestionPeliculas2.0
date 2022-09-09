@@ -26,7 +26,7 @@ public class GUIGestorCliente extends JDialog {
         setModal(true);
         this.pack();
         this.setVisible(true);
-        System.exit(0);
+        dispose();
         GUARDARButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {

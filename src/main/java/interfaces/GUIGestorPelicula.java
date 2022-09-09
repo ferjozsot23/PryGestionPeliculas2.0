@@ -38,8 +38,8 @@ public class GUIGestorPelicula extends JDialog {
         System.out.println(peliculas.toString());
         actualizarComboBox();
         //this.pack();
-        //this.setVisible(true);
-
+        this.setVisible(true);
+        dispose();
         //System.exit(0);
 
         /*

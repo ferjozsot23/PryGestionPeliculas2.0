@@ -33,7 +33,7 @@ public class GUIGestorRenta extends JDialog {
         setModal(true);
         this.pack();
         this.setVisible(true);
-        System.exit(0);
+        dispose();
 
         GestorRenta gestorRenta = new GestorRenta();
         GestorCliente gestorCliente = new GestorCliente();
