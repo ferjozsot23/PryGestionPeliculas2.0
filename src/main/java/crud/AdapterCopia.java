@@ -60,4 +60,19 @@ public class AdapterCopia {
         crud.insertarDatos("http://unisatelite.com/Movies/actualizarCopia.php",datosCopia);
         this.copias = getCopia();
     }
+
+    public void insertarCopias(int numeroCopias, String idPelicula){
+        for(int i=0; i<numeroCopias; i++ ){
+            HashMap<String,String> datosCopia = new HashMap<>();
+            datosCopia.put("disponible","true");
+            datosCopia.put("id_pelicula",idPelicula);
+            crud.insertarDatos("http://unisatelite.com/Movies/insertarCopia.php",datosCopia);
+        }
+    }
+
+    public void eliminarCopia(String idCopia){
+        HashMap<String,String> datosCopia = new HashMap<>();
+        datosCopia.put("id_copia",idCopia);
+        crud.insertarDatos("http://unisatelite.com/Movies/borrarCopia.php",datosCopia);
+    }
 }

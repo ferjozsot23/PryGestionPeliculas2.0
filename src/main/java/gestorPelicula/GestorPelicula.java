@@ -1,5 +1,6 @@
 package gestorPelicula;
 
+import crud.AdapterCopia;
 import crud.AdapterPelicula;
 
 import java.util.ArrayList;
@@ -8,6 +9,7 @@ import java.util.HashMap;
 public class GestorPelicula {
     private Pelicula pelicula = new Pelicula();
     private AdapterPelicula adaptador = new AdapterPelicula();
+    private AdapterCopia adaptadorCopia = new AdapterCopia();
 
     //Obtener pelicula ya existente en base de datos
     public void setPelicula(String idPelicula){
@@ -38,10 +40,10 @@ public class GestorPelicula {
     }
 
     public void insertarCopias(int numeroCopias, String idPelicula){
-        adaptador.insertarCopias(numeroCopias, idPelicula);
+        adaptadorCopia.insertarCopias(numeroCopias, idPelicula);
     }
 
     public void eliminarCopia(String idCopia){
-        adaptador.eliminarCopia(idCopia);
+        adaptadorCopia.eliminarCopia(idCopia);
     }
 }
