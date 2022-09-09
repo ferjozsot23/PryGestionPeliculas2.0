@@ -1,13 +1,13 @@
 package gestorPelicula;
 
-import crud.Adapter;
+import crud.AdapterPelicula;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class GestorPelicula {
     private Pelicula pelicula = new Pelicula();
-    private Adapter adaptador = new Adapter();
+    private AdapterPelicula adaptador = new AdapterPelicula();
 
     public GestorPelicula(){
 

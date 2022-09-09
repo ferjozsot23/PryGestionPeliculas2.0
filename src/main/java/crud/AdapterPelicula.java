@@ -7,9 +7,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.atomic.AtomicReference;
 
-public class Adapter {
+public class AdapterPelicula {
     private EnvioRecepcion crud = EnvioRecepcion.obtenerInstancia();
     private HashMap<String,ArrayList<String>> peliculas;
 
