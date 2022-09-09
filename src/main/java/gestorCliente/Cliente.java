@@ -1,5 +1,7 @@
 package gestorCliente;
 
+import java.util.ArrayList;
+
 public class Cliente {
 
     private String nombre;
@@ -7,6 +9,14 @@ public class Cliente {
     private String telefono;
     private String direccion;
     private String identificacion;
+
+    public Cliente(ArrayList <String> datosCliente) {
+        this.nombre = datosCliente.get(0);
+        this.apellido =datosCliente.get(1);
+        this.telefono = datosCliente.get(2);
+        this.direccion = datosCliente.get(3);
+        this.identificacion = datosCliente.get(4);
+    }
 
     public Cliente() {
     }
@@ -58,15 +68,23 @@ public class Cliente {
     public void setIdentificacion(String identificacion) {
         this.identificacion = identificacion;
     }
-
+    
+    public ArrayList<String> getInformacion() {
+        ArrayList<String> informacion = new ArrayList<>();
+        informacion.add(this.nombre);
+        informacion.add(this.apellido);
+        informacion.add(this.direccion);
+        informacion.add(this.telefono);
+        return informacion;
+        }
+       
     @Override
     public String toString() {
-        return "Cliente{" +
-                "nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", telefono='" + telefono + '\'' +
-                ", direccion='" + direccion + '\'' +
-                ", identificacion='" + identificacion + '\'' +
-                '}';
+        return "Nombre: " + nombre+
+                "\nApellido='" + apellido+
+                "\nTelefono='" + telefono+
+                "\nDireccion='" + direccion +
+                "\nIdentificacion='" + identificacion+"\n";
     }
+    
 }

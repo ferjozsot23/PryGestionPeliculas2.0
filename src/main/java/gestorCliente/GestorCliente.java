@@ -1,10 +1,12 @@
 package gestorCliente;
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
+import crud.AdapterCliente;
+import gestorPelicula.Recibo;
 
 public class GestorCliente {
     private ArrayList<Cliente> listaCliente =new ArrayList<Cliente>();
-    private int contador = 0;
+    private AdapterCliente adaptadorCliente = new AdapterCliente();
 
     public ArrayList<Cliente> getListaCliente() {
         return listaCliente;
@@ -20,9 +22,7 @@ public class GestorCliente {
         return cuentaNueva;
     }
 
-    public void anadirCliente(Cliente cuentaNueva){
-        this.listaCliente.add(cuentaNueva);
-    }
+
 
     public void modificarDireccion(String newDireccion, String identificacion){
         int auxiliar = buscarCliente(identificacion);
@@ -64,5 +64,8 @@ public class GestorCliente {
         }
         return new Cliente();
     }
+    public void anadirCliente(Cliente cuentaNueva){
+        this.listaCliente.add(cuentaNueva);
 
+    }
 }
