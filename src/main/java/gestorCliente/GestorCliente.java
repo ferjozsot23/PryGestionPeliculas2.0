@@ -1,71 +1,37 @@
 package gestorCliente;
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
+import java.util.HashMap;
+
 import crud.AdapterCliente;
 import gestorPelicula.Recibo;
 
 public class GestorCliente {
-    private ArrayList<Cliente> listaCliente =new ArrayList<Cliente>();
+    private Cliente cliente =new Cliente();
     private AdapterCliente adaptadorCliente = new AdapterCliente();
-
-    public ArrayList<Cliente> getListaCliente() {
-        return listaCliente;
+    public GestorCliente() {
     }
-
-    public void setListaCliente(ArrayList<Cliente> listaCliente) {
-        this.listaCliente = listaCliente;
+    //Traer cliente ya existente de la base de datos;
+    public void setCliente(String idCliente){
+        this.cliente = new Cliente(adaptadorCliente.getCliente(idCliente));//trae uno solo
     }
-
-    public Cliente crearCliente(String datosCuenta[]){
-        Cliente cuentaNueva = new Cliente(datosCuenta[0],datosCuenta[1],datosCuenta[2],datosCuenta[3],datosCuenta[4]);
-        anadirCliente(cuentaNueva);
-        return cuentaNueva;
-    }
-
-
-
-    public void modificarDireccion(String newDireccion, String identificacion){
-        int auxiliar = buscarCliente(identificacion);
-        listaCliente.get(auxiliar).setDireccion(newDireccion);
-    }
-
-    public void modificarTelefono(String newTelefono, String identificacion){
-        int auxiliar = buscarCliente(identificacion);
-        listaCliente.get(auxiliar).setTelefono(newTelefono);
-    }
-    public int buscarCliente(String identificacion){
-        for(int i = 0; i< listaCliente.size(); i++){
-            if(listaCliente.get(i).getIdentificacion().equals(identificacion)){
-                return i;
-            }
-        }
-        return -1;
-    }
-
     public void eliminarCliente(String identificacion){
-        int aux = buscarCliente(identificacion);
-        if (aux >= 0){
-            if(listaCliente.get(aux).getIdentificacion().equals(identificacion)) {
-                listaCliente.remove(aux);
-            }else{
-                JOptionPane.showMessageDialog(null, "No existe la identificacion asociado a la cuenta", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        }
+        adaptadorCliente.eliminarCliente(identificacion);
+    }
+    public ArrayList<String> extraerDatosCliente(){
+        return this.cliente.getInformacion();
     }
 
-    public Cliente visualizarDatos(String identificacion) {
-        int aux = buscarCliente(identificacion);
-        if (aux >= 0){
-            if(listaCliente.get(aux).getIdentificacion().equals(identificacion)) {
-                return listaCliente.get(aux);
-            }else{
-                JOptionPane.showMessageDialog(null, "No existe la identificacion asociado a la cuenta", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        }
-        return new Cliente();
+    public void agregarCliente(String identificacion, String nombre, String apellido,String direccion, String telefono){
+        this.cliente= new Cliente(identificacion, nombre, apellido, direccion, telefono);
+        adaptadorCliente.insertarCliente(this.cliente);
     }
-    public void anadirCliente(Cliente cuentaNueva){
-        this.listaCliente.add(cuentaNueva);
 
+    public void actualizarCliente(String identificacion, String nombre, String apellido,String direccion, String telefono){
+        this.cliente.setInformacion(identificacion, nombre, apellido, direccion, telefono);
+        adaptadorCliente.actualizarCliente(this.cliente);
+    }
+    public HashMap<String,ArrayList<String>> getClientes(){
+        return adaptadorCliente.getClientes();
     }
 }
