@@ -20,9 +20,9 @@ public class Renta {
     private int dias_extendidos;
     SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
     //constructor
-    public Renta(int id_renta){
+    public Renta(int id_renta, Date fecha_inicio){
         this.id_renta = id_renta;
-        this.fecha_inicio = new java.util.Date(); //fecha del inicio de la renta
+        this.fecha_inicio = fecha_inicio; //fecha del inicio de la renta
         this.vigencia = true;
         this.fecha_entrega = calcularFechaMaxima(this.fecha_inicio,diasMaximos);
     }
