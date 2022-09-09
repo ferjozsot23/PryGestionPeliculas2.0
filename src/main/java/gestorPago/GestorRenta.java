@@ -25,6 +25,7 @@ public class GestorRenta {
         adaptadorRenta.insertarRenta(renta);
     }
 
+
     public void obtenerInformacionRecibo(int idRecibo){
         this.reciboinfo = adapterRecibo.getRecibo(String.valueOf(idRecibo));
     }
@@ -35,7 +36,9 @@ public class GestorRenta {
     }
     public void actualizarDescripcion(ArrayList<String> informacionRecibo){
         recibo = new Recibo(informacionRecibo);
+        adapterRecibo.actualizarRecibo(recibo);
     }
+
     public void crearRenta(String id_Cliente, int id_Copia, int id_recibo){
         renta = new Renta(new java.util.Date(), id_Cliente,id_Copia,id_recibo);
         adaptadorRenta.insertarRenta(renta);
