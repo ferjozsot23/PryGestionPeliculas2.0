@@ -21,7 +21,7 @@ public class Renta {
     private int dias_extendidos;
     SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
     //constructor
-    public Renta(Date fecha_inicio, int id_Cliente, int id_Copia){
+    public Renta(Date fecha_inicio, String id_Cliente, int id_Copia){
         this.id_renta = id_renta;
         this.fecha_inicio = fecha_inicio; //fecha del inicio de la renta
         this.fecha_entrega = null;
@@ -118,9 +118,7 @@ public class Renta {
 */
     // función para agregar la factura por la renta de las películas
 
-    public boolean match(Date fechaEntrega){
-        return (date.format(this.fecha_entrega) == null ? date.format(fechaEntrega) == null : date.format(this.fecha_entrega).equals(date.format(fechaEntrega)));
-    }
+
 
 
 
