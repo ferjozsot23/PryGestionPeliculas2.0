@@ -1,11 +1,15 @@
 package crud;
 
+import gestorPago.Renta;
+
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class AdapterRenta {
+    SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
     private EnvioRecepcion crud = EnvioRecepcion.obtenerInstancia();
 
     private HashMap<String, ArrayList<String>> rentas;
@@ -39,10 +43,10 @@ public class AdapterRenta {
 
     public void insertarRenta(Renta renta){
         HashMap<String,String> datosRenta = new HashMap<>();
-        datosRenta.put("fecha_inicio",renta.getTitulo());
-        datosRenta.put("fecha_entrega", renta.getDirector());
-        datosRenta.put("dias_extendidos",Float.toString(renta.getCalificacion()));
-        datosRenta.put("id_recibo", Integer.toString(renta.getDuracion()));
+        datosRenta.put("fecha_inicio",renta.getFecha_Inicio());
+        datosRenta.put("fecha_entrega", renta.getFecha_entrega());
+        datosRenta.put("dias_extendidos",Float.toString(renta.getDias_extendidos()));
+        datosRenta.put("id_recibo", Integer.toString(renta.getId_renta()));
         datosRenta.put("id_cliente",renta.getGenero());
         datosRenta.put("id_copia", renta.getElenco());
         crud.insertarDatos("http://unisatelite.com/Movies/insertarRenta.php",datosRenta);
@@ -59,13 +63,13 @@ public class AdapterRenta {
 
     public void actualizarRenta(Renta renta){
         HashMap<String,String> datosRenta = new HashMap<>();
-        datosRenta.put("id_renta",renta.getIdPelicula());
-        datosRenta.put("fecha_inicio",renta.getTitulo());
-        datosRenta.put("fecha_entrega", renta.getDirector());
-        datosRenta.put("dias_extendidos",Float.toString(renta.getCalificacion()));
-        datosRenta.put("id_recibo", Integer.toString(renta.getDuracion()));
-        datosRenta.put("id_cliente",renta.getGenero());
-        datosRenta.put("id_copia", renta.getElenco());
+        datosRenta.put("id_renta",renta.getId_renta());
+        datosRenta.put("fecha_inicio",renta.getFecha_Inicio());
+        datosRenta.put("fecha_entrega", renta.getFecha_entrega());
+        datosRenta.put("dias_extendidos",Float.toString(renta.getDias_extendidos()));
+        datosRenta.put("id_recibo", Integer.toString(renta.getId_renta()));
+        datosRenta.put("id_cliente",renta.getC().getIdentificacion());
+        datosRenta.put("id_copia", renta.getCp().getIdCopia());
         crud.insertarDatos("http://unisatelite.com/Movies/actualizarRenta.php",datosRenta);
         this.rentas = getRentas();
     }

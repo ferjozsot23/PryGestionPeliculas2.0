@@ -1,36 +1,29 @@
 package gestorPago;
 
+import gestorCliente.Cliente;
 import gestorPelicula.Copia;
-
-import java.time.temporal.Temporal;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.time.temporal.ChronoUnit;
 import java.text.SimpleDateFormat;
 
 public class Renta {
     private int id_renta;
-
+    private Cliente c;
     private boolean vigencia;
-
+    private Copia cp;
     private Date fecha_inicio;
     private Date fecha_entrega;
     private long diasExcedidos;
     private final int diasMaximos = 7;
     private int dias_extendidos;
-
-    SimpleDateFormat date = new SimpleDateFormat("yyyy/MM/dd");
-
-    public ArrayList<Copia> copiasRentadas;
+    SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
     //constructor
-    public Renta(){
+    public Renta(int id_renta){
+        this.id_renta = id_renta;
         this.fecha_inicio = new java.util.Date(); //fecha del inicio de la renta
         this.vigencia = true;
         this.fecha_entrega = calcularFechaMaxima(this.fecha_inicio,diasMaximos);
-
-        this.copiasRentadas = new ArrayList<>();
-
     }
 
     public int getId_renta() {
@@ -65,22 +58,27 @@ public class Renta {
         this.dias_extendidos = dias_extendidos;
     }
 
-
-    // añadir una película a la lista de películas a rentar
-    public void agregarPelicula(Copia c){
-        copiasRentadas.add(c);
-    }
-    // eliminar una película a la lista de películas a rentar
-    public void removerPelicula(Copia c){
-        copiasRentadas.remove(c);
-    }
-
-
     public static Date calcularFechaMaxima(Date fecha, int dias){
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(fecha);
         calendar.add(Calendar.DAY_OF_YEAR, dias);
         return calendar.getTime();
+    }
+
+    public void asociarCliente(Cliente c){
+        this.c = c;
+    }
+
+    public void agregarCopia(Copia cp){
+        this.cp = cp;
+    }
+
+    public Cliente getC() {
+        return c;
+    }
+
+    public Copia getCp() {
+        return cp;
     }
 
     // función para agregar la factura por la renta de las películas
