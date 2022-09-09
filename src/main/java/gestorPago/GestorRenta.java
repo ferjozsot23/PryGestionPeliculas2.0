@@ -22,7 +22,7 @@ public class GestorRenta {
         adaptadorRenta.insertarRenta(new Renta(id, new java.util.Date()));
     }*/
 
-    public void agregarRenta(Date fechaInicio, int id_Cliente, int id_Copia){
+    public void agregarRenta(Date fechaInicio, String id_Cliente, int id_Copia){
         adaptadorRenta.insertarRenta(new Renta(fechaInicio, id_Cliente,id_Copia));
         renta = new Renta(fechaInicio, id_Cliente,id_Copia);
     }
@@ -46,11 +46,8 @@ public class GestorRenta {
     }
 
     public void calcularDiasExcedidos(Date fechaEntrega){
-        if (match(fechaEntrega)){
-            //this.dias_extendidos = 0;
-        }else{
-            //this.dias_extendidos= (int) ChronoUnit.DAYS.between((Temporal) getFecha_entrega(), (Temporal) fechaEntrega);
-        }
+        int dias_extendidos= (int) ChronoUnit.DAYS.between((Temporal) getFecha_entrega(), (Temporal) fechaEntrega);
+
     }
 
 }
