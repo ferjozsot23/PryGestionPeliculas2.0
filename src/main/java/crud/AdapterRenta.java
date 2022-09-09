@@ -63,7 +63,7 @@ public class AdapterRenta {
 
     public void actualizarRenta(Renta renta){
         HashMap<String,String> datosRenta = new HashMap<>();
-        datosRenta.put("id_renta",String.valueOf(renta.getId_renta()));
+        datosRenta.put("id_renta",String.valueOf(renta.getId_renta())); //Funcion para hacer int a String
         datosRenta.put("fecha_inicio",date.format(renta.getFecha_Inicio()));
         datosRenta.put("fecha_entrega", date.format(renta.getFecha_entrega()));
         datosRenta.put("dias_extendidos",Float.toString(renta.getDias_extendidos()));
