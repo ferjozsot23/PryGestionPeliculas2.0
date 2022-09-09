@@ -27,15 +27,15 @@ public  class Recibo {
     public Recibo(int id_recibo) {
         this.id_recibo=id_recibo;
         fecha = new java.util.Date();
-
         this.monto=calcularSubTotal();
     }
+    /*
     public Recibo(int id_recibo, int dias){
         this.id_recibo=id_recibo;
         fecha = new java.util.Date();
         this.multa= (float) (Math.round((dias*0.75)*100.0)/100.0);
     }
-
+*/
     public void generarDetalles(Cliente cliente, float efectivo){//efectivo: dinero fisico entregado por el comprador
         detalles="              ALQUILER               \n";
         detalles+="Fecha: Quito, "+fecha+"\n";
