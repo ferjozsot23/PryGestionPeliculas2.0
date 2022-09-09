@@ -13,14 +13,14 @@ public class Renta {
     private Cliente c;
     private boolean vigencia;
     private Copia cp;
-    private String fecha_inicio;
-    private String fecha_entrega;
+    private Date fecha_inicio;
+    private Date fecha_entrega;
     private long diasExcedidos;
     private final int diasMaximos = 7;
     private int dias_extendidos;
     SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
     //constructor
-    public Renta(int id_renta, String fecha_inicio){
+    public Renta(int id_renta, Date fecha_inicio){
         this.id_renta = id_renta;
         this.fecha_inicio = fecha_inicio; //fecha del inicio de la renta
         this.vigencia = true;
@@ -43,8 +43,8 @@ public class Renta {
         this.fecha_inicio = fecha_Inicio;
     }
 
-    public String getFecha_entrega() {
-        return (String) fecha_entrega;
+    public Date getFecha_entrega() {
+        return fecha_entrega;
     }
 
     public void setFecha_entrega(Date fecha_Fin) {
