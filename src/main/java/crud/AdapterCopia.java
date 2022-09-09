@@ -33,7 +33,7 @@ public class AdapterCopia {
     public ArrayList getCopia(String idCopia){
         //HashMap mapPeliculas = getPeliculas()
         if(this.copia == null){
-            this.copia = getCopia();
+            this.copia = getCopias();
         }
         return (ArrayList) this.copia.get(idCopia);
     }
