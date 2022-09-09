@@ -40,7 +40,7 @@ public class AdapterCliente {
         return (ArrayList) this.clientes.get(idCliente);
     }
 
-    public ArrayList<String> getPeliculaPorTitulo(String titulo){
+   /* public ArrayList<String> getPeliculaPorTitulo(String titulo){
         ArrayList<String> resultadoBusqueda = new ArrayList<>();
         Set keys = this.clientes.keySet();
         //System.out.println(keys.toString());
@@ -51,13 +51,13 @@ public class AdapterCliente {
                 resultadoBusqueda = this.clientes.get(key);
             }
         }
-        /*this.peliculas.forEach((key,value)->{
+        *//*this.peliculas.forEach((key,value)->{
             if(value.get(1).equals(titulo)) {
                 resultadoBusqueda.set(this.peliculas.get(key));
             }
-        });*/
+        });*//*
         return resultadoBusqueda;
-    }
+    }*/
 
     public void insertarCliente(Cliente cliente){
         HashMap<String,String> datosCliente = new HashMap<>();
@@ -65,12 +65,13 @@ public class AdapterCliente {
         datosCliente.put("apellido", cliente.getApellido());
         datosCliente.put("direccion",cliente.getDireccion());
         datosCliente.put("telefono",cliente.getTelefono());
+        datosCliente.put("id_cliente",cliente.getIdentificacion());
         crud.insertarDatos("http://unisatelite.com/Movies/insertarCliente.php",datosCliente);
         this.clientes = getClientes();
         //System.out.println(this.clientes.toString());
     }
 
-    public void eliminarPelicula(String idCLiente){
+    public void eliminarCliente(String idCLiente){
         HashMap<String,String> datosCliente = new HashMap<>();
         datosCliente.put("id_cliente",idCLiente);
         crud.insertarDatos("http://unisatelite.com/Movies/borrarCliente.php",datosCliente);
