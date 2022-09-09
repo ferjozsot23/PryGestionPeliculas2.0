@@ -50,8 +50,9 @@ public class GestorRenta {
         establecerDiasExtendidos(renta.getFecha_Inicio(),fechaFin);
     }
 
-    public void obtenerInformacionRenta(int idRenta){
+    public ArrayList<String> obtenerInformacionRenta(int idRenta){
         this.rentainfo = adaptadorRenta.getRenta(String.valueOf(idRenta));
+        return this.rentainfo;
     }
 
     public void finalizarRenta(int idRenta, Date fechaEntrega){
