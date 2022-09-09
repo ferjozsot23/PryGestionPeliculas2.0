@@ -133,7 +133,7 @@ public  class Recibo {
 
     public int getId_recibo() { return id_recibo; }
 
-    public Date getFecha() { return fecha; }
+    public String getFecha() { return date.format(fecha) ; }
 
     public float getMonto() { return monto; }
 
