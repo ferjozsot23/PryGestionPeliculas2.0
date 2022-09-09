@@ -85,7 +85,7 @@ public class GUIGestorPelicula extends JDialog {
                 gestorPelicula.setPelicula((String) peliculasCMB.get(selected).get(0));
                 gestorPelicula.actualizarPelicula(tFTitulo.getText(), tFDirector.getText(), Float.parseFloat(tFCalificacion.getText()), Integer.parseInt(textField1.getText()),
                         Double.parseDouble(tFTarifa.getText()), tFGenero.getText(), tFElenco.getText(), tFIdioma.getText());
-                //actualizarComboBox();
+                actualizarComboBox();
             }
 
         });
@@ -98,7 +98,7 @@ public class GUIGestorPelicula extends JDialog {
                 guiCopia.setVisible(true);
             }
         });
-        cmbPeliculas.addItemListener(new ItemListener() {
+        /*cmbPeliculas.addItemListener(new ItemListener() {
             @Override
             public void itemStateChanged(ItemEvent e) {
                 if(flag){
@@ -113,8 +113,38 @@ public class GUIGestorPelicula extends JDialog {
                     tFTarifa.setText(peliculasCMB.get(selected).get(1).toString());
                 }
             }
-        });
+        });*/
 
+        cmbPeliculas.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                int selected = cmbPeliculas.getSelectedIndex();
+                tFTitulo.setText(peliculasCMB.get(selected).get(6).toString());
+                tFDirector.setText(peliculasCMB.get(selected).get(3).toString());
+                tFCalificacion.setText(peliculasCMB.get(selected).get(2).toString());
+                textField1.setText(peliculasCMB.get(selected).get(7).toString());
+                tFGenero.setText(peliculasCMB.get(selected).get(5).toString());
+                tFElenco.setText(peliculasCMB.get(selected).get(4).toString());
+                tFIdioma.setText(peliculasCMB.get(selected).get(8).toString());
+                tFTarifa.setText(peliculasCMB.get(selected).get(1).toString());
+            }
+        });
+        /*
+        cmbPeliculas.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int selected = cmbPeliculas.getSelectedIndex();
+                tFTitulo.setText(peliculasCMB.get(selected).get(6).toString());
+                tFDirector.setText(peliculasCMB.get(selected).get(3).toString());
+                tFCalificacion.setText(peliculasCMB.get(selected).get(2).toString());
+                textField1.setText(peliculasCMB.get(selected).get(7).toString());
+                tFGenero.setText(peliculasCMB.get(selected).get(5).toString());
+                tFElenco.setText(peliculasCMB.get(selected).get(4).toString());
+                tFIdioma.setText(peliculasCMB.get(selected).get(8).toString());
+                tFTarifa.setText(peliculasCMB.get(selected).get(1).toString());
+            }
+        });*/
     }
         public void actualizarComboBox () {
             peliculas = gestorPelicula.getPeliculas();
