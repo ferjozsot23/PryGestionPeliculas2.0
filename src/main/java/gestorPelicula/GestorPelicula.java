@@ -35,8 +35,16 @@ public class GestorPelicula {
         adaptador.actualizarPelicula(this.pelicula);
     }
 
+    public ArrayList getPelicula(String idPelicula){
+        return adaptador.getPelicula(idPelicula);
+    }
+
     public HashMap<String,ArrayList<String>> getPeliculas(){
         return adaptador.getPeliculas();
+    }
+
+    public HashMap<String,ArrayList<String>> getCopias(){
+        return adaptadorCopia.getCopias();
     }
 
     public void insertarCopias(int numeroCopias, String idPelicula){
