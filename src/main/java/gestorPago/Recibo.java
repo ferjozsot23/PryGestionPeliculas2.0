@@ -3,6 +3,7 @@ package gestorPago;
 import gestorCliente.Cliente;
 import gestorPelicula.Copia;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 
@@ -29,6 +30,18 @@ public  class Recibo {
         fecha = new java.util.Date();
         this.monto=calcularSubTotal();
         generarDetalles();
+    }
+    public Recibo(ArrayList<String> reciboInformacion) {
+        try {
+            this.fecha=date.parse(reciboInformacion.get(0));
+            this.monto= Float.parseFloat(reciboInformacion.get(1));
+            this.id_recibo= Integer.parseInt(reciboInformacion.get(2));
+            this.multa= Float.parseFloat(reciboInformacion.get(3));
+            this.detalles=reciboInformacion.get(4);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+        //this.id_recibo=id_recibo;
     }
 
 
