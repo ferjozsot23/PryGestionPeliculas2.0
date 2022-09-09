@@ -3,27 +3,31 @@ package gestorPago;
 import gestorCliente.Cliente;
 import gestorPelicula.Copia;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public  class Recibo {
     //
     int id_recibo;
-    LocalDateTime fecha;
+    private Date fecha;
     float monto;
     String detalles;
     float multa;
     //cambiar por lista de copias
     Copia contenido;
+    SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
 
     //aqui se reciben un listado de copias; cambiar String por copia
     public Recibo(Copia contenido) {
 //        //Consultar a la base de datos el ultimo numero de factura registrado/
 //        this.numeroFactura=1;
-//
-        this.fecha =LocalDateTime.now();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(fecha);
 //        this.contenido=contenido;
 //
         this.monto=calcularSubTotal();
@@ -31,7 +35,8 @@ public  class Recibo {
     public Recibo(int dias, int peliculas){
         //        //Consultar a la base de datos el ultimo numero de factura registrado/
 //        this.numeroFactura=1;
-        this.fecha =LocalDateTime.now();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(fecha);;
         this.multa= (float) (Math.round((dias*peliculas*0.75)*100.0)/100.0);
     }
     //debe recibir un cliente
@@ -128,7 +133,7 @@ public  class Recibo {
 
     public int getId_recibo() { return id_recibo; }
 
-    public LocalDateTime getFecha() { return fecha; }
+    public Date getFecha() { return fecha; }
 
     public float getMonto() { return monto; }
 
@@ -138,7 +143,7 @@ public  class Recibo {
 
     public void setId_recibo(int id_recibo) { this.id_recibo = id_recibo; }
 
-    public void setFecha(LocalDateTime fecha) { this.fecha = fecha; }
+    public void setFecha(Date fecha) { this.fecha = fecha; }
 
     public void setMonto(float monto) { this.monto = monto; }
 
