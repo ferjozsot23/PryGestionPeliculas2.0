@@ -1,5 +1,7 @@
 package interfaces;
 
+import gestorPelicula.GestorPelicula;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -11,14 +13,14 @@ public class GUIGestorPelicula extends JDialog {
     private JButton ELIMINARButton;
     private JButton ACTUALIZARButton;
     private JButton GUARDARButton;
-    private JTextField textField1;
-    private JTextField textField2;
-    private JTextField textField3;
-    private JTextField textField4;
-    private JTextField textField5;
-    private JTextField textField6;
-    private JTextField textField7;
-    private JTextField textField8;
+    private JTextField tFTitulo;
+    private JTextField tFDirector;
+    private JTextField tFCalificacion;
+    private JTextField tFDuracion;
+    private JTextField tFGenero;
+    private JTextField tFElenco;
+    private JTextField tFIdioma;
+    private JTextField tFTarifa;
     private JButton MODIFICARCOPIASButton;
 
     public GUIGestorPelicula() {
@@ -28,6 +30,9 @@ public class GUIGestorPelicula extends JDialog {
         this.pack();
         this.setVisible(true);
         System.exit(0);
+
+        GestorPelicula gestorPelicula = new GestorPelicula();
+
         ELIMINARButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -38,11 +43,15 @@ public class GUIGestorPelicula extends JDialog {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 
+                gestorPelicula.actualizarPelicula(tFTitulo.getText(), tFDirector.getText(), Float.parseFloat(tFCalificacion.getText()), Integer.parseInt(tFDuracion.getText()), Double.parseDouble(tFTarifa.getText()), tFGenero.getText(), tFElenco.getText(), tFIdioma.getText());
+
             }
         });
         GUARDARButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+
+                gestorPelicula.agregarPelicula(tFTitulo.getText(), tFDirector.getText(), Float.parseFloat(tFCalificacion.getText()), Integer.parseInt(tFDuracion.getText()), Double.parseDouble(tFTarifa.getText()), tFGenero.getText(), tFElenco.getText(), tFIdioma.getText());
 
             }
         });
