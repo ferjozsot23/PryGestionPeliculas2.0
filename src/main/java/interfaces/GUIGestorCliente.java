@@ -17,8 +17,8 @@ public class GUIGestorCliente extends JDialog {
     private JTextField textField5;
     private JButton buttonOK;
     private JComboBox comboBox1;
-    private JButton button1;
-    private JButton button2;
+    private JButton ACTUALIZARButton;
+    private JButton ELIMINARButton;
 
     public GUIGestorCliente() {
         setContentPane(contentPane);
@@ -32,6 +32,18 @@ public class GUIGestorCliente extends JDialog {
             public void actionPerformed(ActionEvent actionEvent) {
                 GestorCliente gestor= new GestorCliente();
                 gestor.agregarCliente(textField1.getText(), textField2.getText(), textField3.getText(), textField4.getText(), textField5.getText());
+            }
+        });
+        ACTUALIZARButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        ELIMINARButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
             }
         });
     }
