@@ -6,7 +6,7 @@ public class Copia {
 
     private String idCopia;
     private boolean disponible;
-    private Recibo pelicula;
+    private Pelicula pelicula;
 
     public Copia(ArrayList<String> infoCopia){
         this.idCopia = infoCopia.get(0);
