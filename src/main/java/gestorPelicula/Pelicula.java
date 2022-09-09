@@ -70,25 +70,16 @@ public class Pelicula {
         return titulo;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
 
     public String getDirector() {
         return director;
     }
 
-    public void setDirector(String director) {
-        this.director = director;
-    }
 
     public float getCalificacion() {
         return calificacion;
     }
 
-    public void setCalificacion(float calificacion) {
-        this.calificacion = calificacion;
-    }
 
     public int getDuracion() {
         return duracion;
