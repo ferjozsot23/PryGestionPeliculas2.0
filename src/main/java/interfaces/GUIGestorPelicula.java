@@ -11,7 +11,6 @@ import java.util.HashMap;
 
 public class GUIGestorPelicula extends JDialog {
     private JPanel contentPane;
-    private JButton buscarButton;
     private JButton ELIMINARButton;
     private JButton ACTUALIZARButton;
     private JButton GUARDARButton;
@@ -45,41 +44,6 @@ public class GUIGestorPelicula extends JDialog {
         System.exit(0);
 
 
-        ELIMINARButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-
-            }
-        });
-        ACTUALIZARButton.addActionListener(new ActionListener() {
-            //System.out.println("alo");
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                System.out.println("alo2");
-                gestorPelicula.actualizarPelicula(tFTitulo.getText(), tFDirector.getText(), Float.parseFloat(tFCalificacion.getText()), Integer.parseInt(tFDuracion.getText()), Double.parseDouble(tFTarifa.getText()), tFGenero.getText(), tFElenco.getText(), tFIdioma.getText());
-
-            }
-        });
-        GUARDARButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-
-                gestorPelicula.agregarPelicula(tFTitulo.getText(), tFDirector.getText(), Float.parseFloat(tFCalificacion.getText()), Integer.parseInt(tFDuracion.getText()), Double.parseDouble(tFTarifa.getText()), tFGenero.getText(), tFElenco.getText(), tFIdioma.getText());
-
-            }
-        });
-        buscarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-
-            }
-        });
-        MODIFICARCOPIASButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-
-            }
-        });
         cmbPeliculas.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -113,6 +77,24 @@ public class GUIGestorPelicula extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("ola");
+            }
+        });
+        MODIFICARCOPIASButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        ELIMINARButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        ACTUALIZARButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
             }
         });
     }

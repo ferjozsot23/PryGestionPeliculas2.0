@@ -70,17 +70,6 @@
                     </properties>
                     <border type="none"/>
                     <children>
-                      <component id="8b37e" class="javax.swing.JButton" binding="MODIFICARCOPIASButton" default-binding="true">
-                        <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                        </constraints>
-                        <properties>
-                          <background color="-11393146"/>
-                          <font name="Droid Sans Mono" size="16" style="1"/>
-                          <foreground color="-1"/>
-                          <text value="MODIFICAR COPIAS"/>
-                        </properties>
-                      </component>
                       <component id="42d5e" class="javax.swing.JTextField" binding="tFDuracion">
                         <constraints>
                           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
@@ -88,6 +77,18 @@
                           </grid>
                         </constraints>
                         <properties/>
+                      </component>
+                      <component id="ec807" class="javax.swing.JButton" binding="MODIFICARCOPIASButton" default-binding="true">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-11393146"/>
+                          <enabled value="false"/>
+                          <font name="Droid Sans Mono" size="16" style="1"/>
+                          <foreground color="-1"/>
+                          <text value="MODIFICAR COPIAS"/>
+                        </properties>
                       </component>
                     </children>
                   </grid>
@@ -370,18 +371,7 @@
                     </properties>
                     <border type="none"/>
                     <children>
-                      <component id="d66df" class="javax.swing.JButton" binding="ELIMINARButton" default-binding="true">
-                        <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                        </constraints>
-                        <properties>
-                          <background color="-11393146"/>
-                          <font name="Droid Sans Mono" size="16" style="1"/>
-                          <foreground color="-1"/>
-                          <text value="ELIMINAR"/>
-                        </properties>
-                      </component>
-                      <component id="3c3e4" class="javax.swing.JButton" binding="ACTUALIZARButton" default-binding="true">
+                      <component id="254df" class="javax.swing.JButton" binding="ACTUALIZARButton" default-binding="true">
                         <constraints>
                           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
@@ -390,6 +380,17 @@
                           <font name="Droid Sans Mono" size="16" style="1"/>
                           <foreground color="-1"/>
                           <text value="ACTUALIZAR"/>
+                        </properties>
+                      </component>
+                      <component id="2d7b1" class="javax.swing.JButton" binding="ELIMINARButton" default-binding="true">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-11393146"/>
+                          <font name="Droid Sans Mono" size="16" style="1"/>
+                          <foreground color="-1"/>
+                          <text value="ELIMINAR"/>
                         </properties>
                       </component>
                     </children>
@@ -698,7 +699,12 @@
                     </properties>
                     <border type="none"/>
                     <children>
-                      <component id="ef588" class="javax.swing.JButton" binding="GUARDARButton" default-binding="true">
+                      <hspacer id="f0f04">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                      </hspacer>
+                      <component id="1305f" class="javax.swing.JButton" binding="GUARDARButton" default-binding="true">
                         <constraints>
                           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
@@ -709,11 +715,6 @@
                           <text value="GUARDAR"/>
                         </properties>
                       </component>
-                      <hspacer id="f0f04">
-                        <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                        </constraints>
-                      </hspacer>
                     </children>
                   </grid>
                 </children>
