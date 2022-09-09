@@ -6,8 +6,8 @@ import java.util.HashMap;
 import crud.AdapterCliente;
 
 public class GestorCliente {
-    private Cliente cliente =new Cliente();
-    private AdapterCliente adaptadorCliente = new AdapterCliente();
+    public Cliente cliente =new Cliente();
+    public AdapterCliente adaptadorCliente = new AdapterCliente();
     public GestorCliente() {
     }
     //Traer cliente ya existente de la base de datos;
